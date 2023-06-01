@@ -1,0 +1,6 @@
+[user]
+        name = NoahPsight
+        email = 120606151+NoahPsight@users.noreply.github.com
+
+[core]
+    editor = nvim
