@@ -16,6 +16,8 @@ setup_system()
     sudo pacman -Syu
     pinstall ntfs-3g
     pinstall openssh
+    pinstall openssh
+    pinstall xclip
 }
 
 setup_dotfiles()
