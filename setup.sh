@@ -62,6 +62,7 @@ setup_nvim()
 
 main()
 {
+    rm delete_me
     setup_system
     setup_dotfiles    
     setup_desktop
