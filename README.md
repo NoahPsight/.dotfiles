@@ -1,7 +1,7 @@
 # Fib's configs
 
 ## Requirements
-- Arch Linux Distro
+- Arch Linux Distro using pacman
 - Terminal
 - Internet Connection
 - Brain
