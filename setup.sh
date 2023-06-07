@@ -23,7 +23,7 @@ setup_dotfiles()
     pinstall git
     pinstall stow
     mkdir ~/.config
-    git clone https://github.com/NoahPsight/.dotfiles ~/.dotfiles/
+    git clone --recursive https://github.com/NoahPsight/.dotfiles ~/.dotfiles/
     cd ~/.dotfiles/
     stow .
 }
@@ -34,7 +34,7 @@ setup_desktop()
     pinstall sddm
     sudo systemctl enable sddm
     pinstall base-devel xorg-init libx11 libxinerama libxft webkit2gtk
-    git clone https://github.com/LukeSmithxyz/dwm.git ~/.config/dwm/
+    git clone --depth 1 https://github.com/LukeSmithxyz/dwm.git ~/.config/dwm/
     cd ~/.config/dwm
     sudo make clean install
     echo "exec dwm" > ~/.xinitrc
