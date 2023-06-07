@@ -34,8 +34,11 @@ setup_desktop()
     pinstall sddm
     sudo systemctl enable sddm
     pinstall base-devel xorg-init libx11 libxinerama libxft webkit2gtk
-    git clone --depth 1 https://github.com/LukeSmithxyz/dwm.git ~/.config/dwm/
     cd ~/.config/dwm
+    sudo make clean install
+    cd ~/.config/st
+    sudo make clean install
+    cd ~/.config/dmenu
     sudo make clean install
     echo "exec dwm" > ~/.xinitrc
     sudo mkdir /usr/share/xsessions/
