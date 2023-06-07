@@ -18,6 +18,8 @@ setup_system()
     pinstall openssh
     pinstall openssh
     pinstall xclip
+    pinstall neofetch
+    pinstall scrot
 }
 
 setup_dotfiles()
