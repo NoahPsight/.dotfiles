@@ -1,5 +1,3 @@
-set -e
-
 pinstall() {
     # Install pacman packages.
     # Ex:
@@ -34,6 +32,7 @@ setup_system() {
     pinstall figlet
     pinstall nodejs
     pinstall npm
+    pinstall kitty
 }
 
 setup_desktop() {
@@ -51,14 +50,14 @@ setup_desktop() {
     fi
     sudo mkdir -p /usr/share/xsessions/
     cat << EOF | sudo tee /usr/share/xsessions/dwm.desktop > /dev/null
-    [Desktop Entry]
-    Encoding=UTF-8
-    Name=Dwm
-    Comment=Dynamic window manager
-    Exec=dwm
-    Icon=dwm
-    Type=XSession
-    EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+EOF
 }
 
 setup_shell() {
