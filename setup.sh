@@ -1,7 +1,9 @@
-# Install pacman packages.
-# Ex:
-#   pinstall neovim
+set -e
+
 pinstall() {
+    # Install pacman packages.
+    # Ex:
+    #   pinstall neovim
     for package in "$@"; do
         if ! pacman -Q "$package" >/dev/null 2>&1; then
             sudo pacman -S --noconfirm "$package"
@@ -11,65 +13,87 @@ pinstall() {
     done
 }
 
-setup_system()
-{
-    sudo pacman -Syu
+setup_dotfiles() {
+    pinstall git
+    pinstall stow
+    mkdir -p ~/.config
+    git clone --recursive https://github.com/NoahPsight/.dotfiles ~/.dotfiles/
+    pushd ~/.dotfiles/
+    stow .
+    popd
+}
+
+setup_system() {
     pinstall ntfs-3g
     pinstall openssh
     pinstall openssh
     pinstall xclip
     pinstall neofetch
     pinstall scrot
+    pinstall feh
+    pinstall figlet
+    pinstall nodejs
+    pinstall npm
 }
 
-setup_dotfiles()
-{
-    pinstall git
-    pinstall stow
-    mkdir ~/.config
-    git clone --recursive https://github.com/NoahPsight/.dotfiles ~/.dotfiles/
-    cd ~/.dotfiles/
-    stow .
-}
-
-setup_desktop()
-{
+setup_desktop() {
     pinstall xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
     pinstall sddm
-    sudo systemctl enable sddm
     pinstall base-devel xorg-init libx11 libxinerama libxft webkit2gtk
-    cd ~/.config/dwm
-    sudo make clean install
-    cd ~/.config/st
-    sudo make clean install
-    cd ~/.config/dmenu
-    sudo make clean install
-    echo "exec dwm" > ~/.xinitrc
-    sudo mkdir /usr/share/xsessions/
-    echo -e "[Desktop Entry]\n\
-        Encoding=UTF-8\n\
-        Name=Dwm\n\
-        Comment=Dynamic window manager\n\
-        Exec=dwm\n\
-        Icon=dwm\n\
-        Type=XSession" > /usr/share/xsessions/dwm.desktop
-    }
+    sudo systemctl enable sddm
+    for dir in dwm st dmenu; do
+        pushd ~/.config/"$dir"
+        sudo make clean install
+        popd
+    done
+    if [ ! -f ~/.xinitrc ]; then
+        echo "exec dwm" > ~/.xinitrc
+    fi
+    sudo mkdir -p /usr/share/xsessions/
+    cat << EOF | sudo tee /usr/share/xsessions/dwm.desktop > /dev/null
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=Dwm
+    Comment=Dynamic window manager
+    Exec=dwm
+    Icon=dwm
+    Type=XSession
+    EOF
+}
 
-setup_nvim()
-{
+setup_shell() {
+    pinstall zsh
+    pinstall zsh-autosuggestions
+    pinstall zsh-syntax-highlighting
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting/
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+    git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+}
+
+setup_nvim() {
     pinstall neovim
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
         ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
-main()
-{
+setup_audio() {
+    pinstall pipewire-jack pipwire-alsa pipewire-pulse qjackctl
+    pinstall wireplumber
+    pinstall helvum
+}
+
+main() {
+    sudo pacman -Syu --noconfirm
     rm delete_me
     setup_system
     setup_dotfiles    
     setup_desktop
+    setup_shell
     setup_nvim
-    cd ~
+    setup_audio
 }
 
 main
