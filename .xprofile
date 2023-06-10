@@ -1,2 +1,3 @@
+feh --bg-fill ~/Downloads/fib-bg.jpg
 setxkbmap -option caps:escape
 picom -b

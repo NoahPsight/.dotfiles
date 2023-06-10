@@ -34,6 +34,12 @@ setup_system() {
     pinstall unzip
     pinstall gnome-themes-extra
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+    mkdir -p ~/Downloads/
+    pushd ~/Downloads/
+    if [ ! -f fib-bg.jpg ]; then
+        curl -L -o fib-bg.jpg https://cdnb.artstation.com/p/assets/images/images/048/005/729/medium/eva-jansen-tokio-055-cam-1-00000.jpg?1648989766
+    fi
+    popd
 }
 
 setup_desktop() {
@@ -53,7 +59,7 @@ setup_desktop() {
     cat << EOF | sudo tee /usr/share/xsessions/dwm.desktop > /dev/null
 [Desktop Entry]
 Encoding=UTF-8
-Name=Dwm
+Name=dwm
 Comment=Dynamic window manager
 Exec=dwm
 Icon=dwm
