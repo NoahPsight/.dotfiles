@@ -1,3 +1,2 @@
 setxkbmap -option caps:escape
-feh --bg-fill ~/Downloads/eva-jansen-tokio-055-cam-1-00000.jpg
 picom -b

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/fib/Downloads/eva-jansen-tokio-055-cam-1-00000.jpg' 

@@ -24,15 +24,16 @@ setup_dotfiles() {
 setup_system() {
     pinstall ntfs-3g
     pinstall openssh
-    pinstall openssh
     pinstall xclip
     pinstall neofetch
     pinstall scrot
+    pinstall htop
     pinstall feh
     pinstall figlet
-    pinstall nodejs
-    pinstall npm
-    pinstall kitty
+    pinstall nodejs npm
+    pinstall unzip
+    pinstall gnome-themes-extra
+    gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 }
 
 setup_desktop() {
@@ -40,7 +41,7 @@ setup_desktop() {
     pinstall sddm
     pinstall base-devel xorg-init libx11 libxinerama libxft webkit2gtk
     sudo systemctl enable sddm
-    for dir in dwm st dmenu; do
+    for dir in dwm dmenu; do
         pushd ~/.config/"$dir"
         sudo make clean install
         popd
@@ -61,15 +62,14 @@ EOF
 }
 
 setup_shell() {
-    pinstall zsh
-    pinstall zsh-autosuggestions
-    pinstall zsh-syntax-highlighting
+    pinstall zsh zsh-autosuggestions zsh-syntax-highlighting
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
     git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting/
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
     git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    pinstall kitty picom tmux
 }
 
 setup_nvim() {
@@ -79,11 +79,19 @@ setup_nvim() {
 }
 
 setup_audio() {
-    pinstall pipewire-jack pipwire-alsa pipewire-pulse qjackctl
-    pinstall wireplumber
-    pinstall helvum
+    pinstall pipewire pipewire-alsa pipewire-pulse wireplumber
+    sudo pacman -Rns pulseaudio
+    systemctl --user --now disable pulseaudio
+    systemctl --user --now enable pipewire pipewire-pulse wireplumber
+    pinstall pavucontrol
+    pinstall qpwgraph
 }
 
+setup_apps() {
+    pinstall discord
+    pinstall firefox
+    pinstall keepassxc
+}
 main() {
     sudo pacman -Syu --noconfirm
     rm delete_me
@@ -93,6 +101,7 @@ main() {
     setup_shell
     setup_nvim
     setup_audio
+    setup_apps
 }
 
 main
