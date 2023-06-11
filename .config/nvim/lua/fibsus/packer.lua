@@ -65,4 +65,5 @@ return require('packer').startup(function(use)
 
     use 'github/copilot.vim'
     use 'wakatime/vim-wakatime'
+    use 'christoomey/vim-tmux-navigator'
 end)
