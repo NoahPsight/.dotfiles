@@ -113,6 +113,7 @@ setup_apps() {
     pinstall discord
     pinstall firefox
     pinstall keepassxc
+    yay -S --noconfirm tableplus
 }
 main() {
     sudo pacman -Syu --noconfirm
