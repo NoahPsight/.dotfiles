@@ -46,6 +46,8 @@ setup_system() {
     #     sudo mv Graphite-Dark-nord/ /usr/share/themes/
     # fi
     popd
+    pinstall grub-customizer os-prober
+    pinstall polkit-gnome
 }
 
 setup_desktop() {
@@ -79,7 +81,7 @@ setup_shell() {
     git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
     git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting/
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
     git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     pinstall kitty picom tmux
 }
@@ -97,6 +99,7 @@ setup_audio() {
     systemctl --user --now enable pipewire pipewire-pulse wireplumber
     pinstall pavucontrol
     pinstall qpwgraph
+    pinstall easyeffects
 }
 
 setup_apps() {

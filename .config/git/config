@@ -4,6 +4,11 @@
 
 [core]
     editor = nvim
+    filemode = false
+    autocrlf = input
+
+[safe]
+    directory = *
 
 [alias]
   nuke = "!f() { \
