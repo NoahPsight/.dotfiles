@@ -48,6 +48,13 @@ setup_system() {
     popd
     pinstall grub-customizer os-prober
     pinstall polkit-gnome
+    if ! command -v yay >/dev/null; then
+        git clone https://aur.archlinux.org/yay.git ~/yay/
+        pushd ~/yay/
+        makepkg -si
+        popd
+        rm -rf ~/yay/
+    fi
 }
 
 setup_desktop() {
