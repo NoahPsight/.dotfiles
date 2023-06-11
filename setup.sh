@@ -116,6 +116,7 @@ setup_apps() {
     pinstall firefox
     pinstall keepassxc
     yay -S --noconfirm tableplus
+    yay -S --noconfirm postman-bin
 }
 main() {
     sudo pacman -Syu --noconfirm
