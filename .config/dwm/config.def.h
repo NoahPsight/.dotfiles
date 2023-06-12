@@ -33,7 +33,7 @@ static const int usealtbar               = 1;        /* 1 means use non-dwm stat
 static const char *altbarclass           = "Polybar"; /* Alternate bar class name */
 static const char *altbarcmd             = "$HOME/bar.sh"; /* Alternate bar launch command */
 #endif // BAR_ANYBAR_PATCH
-static const int showbar                 = 1;   /* 0 means no bar */
+static const int showbar                 = 0;   /* 0 means no bar */
 static const int topbar                  = 0;   /* 0 means bottom bar */
 #if TAB_PATCH
 /*  Display modes of the tab bar: never shown, always shown, shown only in  */

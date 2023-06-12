@@ -2,72 +2,28 @@
 <patchbay name="audioroutes" version="0.4.2">
  <items>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
-   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
-   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FR"/>
-   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FL"/>
-   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [Griefing my teammates - YouTube]" port="Firefox:output_FL"/>
+   <output node="Firefox [Editor/IDE Tier List - YouTube]" port="Firefox:output_FL"/>
    <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
-   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FR"/>
-   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
    <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
    <input node="WEBRTC VoiceEngine [recStream]" port="WEBRTC VoiceEngine:input_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
-   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
-   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
-   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FL"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
-   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
-   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FR"/>
-  </item>
-  <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
-   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
    <output node="Firefox [Griefing my teammates - YouTube]" port="Firefox:output_FR"/>
    <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FR"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
-   <input node="WEBRTC VoiceEngine [recStream]" port="WEBRTC VoiceEngine:input_FL"/>
+   <output node="Firefox [Editor/IDE Tier List - YouTube]" port="Firefox:output_FR"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
-   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FL"/>
+   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FL"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FL"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
    <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
@@ -78,8 +34,64 @@
    <input node="WEBRTC VoiceEngine [recStream]" port="WEBRTC VoiceEngine:input_FR"/>
   </item>
   <item node-type="pipewire" port-type="pipewire-audio">
-   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FL"/>
+   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
+   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
+   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:capture_FL"/>
+   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
    <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
+   <input node="WEBRTC VoiceEngine [recStream]" port="WEBRTC VoiceEngine:input_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FR"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="VS278:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FR"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FR"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [AudioStream]" port="Firefox:output_FL"/>
+   <input node="Komplete Audio 1 Analog Stereo" port="Komplete Audio 1:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [Editor/IDE Tier List - YouTube]" port="Firefox:output_FR"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FR"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [Griefing my teammates - YouTube]" port="Firefox:output_FL"/>
+   <input node="TU106 High Definition Audio Controller Digital Stereo (HDMI)" port="HDA NVidia:playback_FL"/>
+  </item>
+  <item node-type="pipewire" port-type="pipewire-audio">
+   <output node="Firefox [(1) Aaron Paul Discovers Bryan Cranston Living in Breaking Bad RV // Omaze - YouTube]" port="Firefox:output_FL"/>
+   <input node="Built-in Audio Analog Stereo" port="ALC257 Analog:playback_FL"/>
   </item>
  </items>
 </patchbay>
