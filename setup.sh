@@ -86,7 +86,7 @@ EOF
 
 setup_shell() {
 pinstall zsh zsh-autosuggestions zsh-syntax-highlighting
-pinstall kitty tmux
+pinstall kitty tmux fzf
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/
@@ -97,7 +97,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 setup_nvim() {
-    pinstall neovim fzf ripgrep
+    pinstall neovim ripgrep
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
         ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
