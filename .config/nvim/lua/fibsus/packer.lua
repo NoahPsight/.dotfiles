@@ -6,23 +6,19 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
 
     use {
-        'goolord/alpha-nvim',
-        res = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
-    }
-
-    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use({
-        "gnikdroy/projections.nvim",
+    use {
+        'rmagatti/auto-session',
         config = function()
+            require("auto-session").setup {
+                log_level = "error",
+                auto_session_suppress_dirs = {},
+            }
         end
-    })
+    }
 
     use {
         'nvim-treesitter/nvim-treesitter',

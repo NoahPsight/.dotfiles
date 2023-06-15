@@ -24,6 +24,7 @@ else
 fi
 
 alias externalssd="cd /mnt/externalssd/"
+alias v="nvim"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

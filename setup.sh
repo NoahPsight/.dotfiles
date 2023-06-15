@@ -70,6 +70,7 @@ setup_system() {
         rm -rf ~/yay/
     fi
     pinstall lsof
+    pinstall gnome-font-viewer
 }
 
 setup_desktop() {
