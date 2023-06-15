@@ -1,1 +1,4 @@
 /mnt/externalssd/code --depth 2
+/home/fib/.config --depth 1
+/home/fib
+/home/fib/.dotfiles

@@ -4,7 +4,21 @@ pinstall() {
     #   pinstall neovim
     for package in "$@"; do
         if ! pacman -Q "$package" >/dev/null 2>&1; then
-            sudo pacman -S --noconfirm "$package"
+            sudo pacman -S --noconfirm --needed "$package"
+        else
+            echo "$package is already installed."
+        fi
+    done
+}
+
+
+yinstall() {
+    # Install packages using yay.
+    # Ex:
+    #   yinstall neovim
+    for package in "$@"; do
+        if ! yay -Q "$package" >/dev/null 2>&1; then
+            yay -S --noconfirm --needed "$package"
         else
             echo "$package is already installed."
         fi
@@ -116,8 +130,9 @@ setup_apps() {
     pinstall discord
     pinstall firefox
     pinstall keepassxc
-    yay -S --noconfirm tableplus
-    yay -S --noconfirm postman-bin
+    yinstall tableplus
+    yinstall postman-bin
+    pinstall vimb
 }
 main() {
     sudo pacman -Syu --noconfirm

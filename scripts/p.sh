@@ -1,0 +1,45 @@
+#!/usr/bin/env zsh
+
+function p() {
+    local cmd="$1"
+    local projects=()
+    if [[ "$cmd" == "-a" ]]; then
+        if [[ -z "$2" ]]; then
+            echo "$(pwd)" >> ~/.projects
+        else
+            echo "${@:2}" >> ~/.projects
+        fi
+        return 0
+    fi
+    while IFS= read -r line; do
+        if echo "$line" | grep -q -- '--depth'; then
+            local dir=$(echo "$line" | cut -d' ' -f1)
+            local depth=$(echo "$line" | cut -d' ' -f3)
+            while IFS= read -r sub_dir; do
+                projects+=("$sub_dir")
+            done < <(find -L "$dir" -maxdepth "$depth" -type d)
+        else
+            projects+=("$line")
+        fi
+    done < ~/.projects
+    case "$cmd" in
+        -l)
+            printf '%s\n' "${projects[@]}"
+            ;;
+        *)
+            local dir=$(printf '%s\n' "${projects[@]}" | fzf +m)
+            if [[ -n "$dir" ]]; then
+                pushd "$dir" > /dev/null
+                local tmux_session_name=$(echo "$dir" | tr '.' '_')
+                tmux has-session -t "$tmux_session_name" > /dev/null
+                if [ $? != 0 ]; then
+                    tmux new-session -d -s "$tmux_session_name"
+                fi
+                popd > /dev/null
+                tmux switch-client -t "$tmux_session_name" || tmux attach-session -t "$tmux_session_name"
+            fi
+            ;;
+    esac
+}
+
+p "$@"

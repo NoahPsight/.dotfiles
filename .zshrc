@@ -25,51 +25,6 @@ fi
 
 alias externalssd="cd /mnt/externalssd/"
 
-function p() {
-    local cmd="$1"
-    local projects=()
-    if [[ "$cmd" == "-a" ]]; then
-        if [[ -z "$2" ]]; then
-            echo "$(pwd)" >> ~/.projects
-        else
-            echo "${@:2}" >> ~/.projects
-        fi
-        return 0
-    fi
-    # Read .projects file line by line
-    while IFS= read -r line; do
-        # If line contains '--depth', split it to retrieve directory and depth
-        if echo "$line" | grep -q -- '--depth'; then
-            local dir=$(echo "$line" | cut -d' ' -f1)
-            local depth=$(echo "$line" | cut -d' ' -f3)
-            # Find all directories up to given depth and add them to projects array
-            while IFS= read -r sub_dir; do
-                projects+=("$sub_dir")
-            done < <(find "$dir" -maxdepth "$depth" -type d)
-        else
-            # If line is just a directory, add it to projects array
-            projects+=("$line")
-        fi
-    done < ~/.projects
-    # Check the provided command and act accordingly
-    case "$cmd" in
-        -l)
-            # Print all projects
-            printf '%s\n' "${projects[@]}"
-            ;;
-        *)
-            # Use fzf for selection among projects
-            local dir=$(printf '%s\n' "${projects[@]}" | fzf +m) && cd "$dir"
-            # Create a new session with the directory name or attach to it if it already exists.
-            tmux has-session -t "${PWD##*/}" 2>/dev/null
-            if [ $? != 0 ]; then
-                tmux new-session -d -s "${PWD##*/}"
-            fi
-            tmux attach-session -t "${PWD##*/}"
-            ;;
-    esac
-}
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
