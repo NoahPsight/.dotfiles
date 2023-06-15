@@ -31,8 +31,7 @@ function p() {
             if [[ -n "$dir" ]]; then
                 pushd "$dir" > /dev/null
                 local tmux_session_name=$(echo "$dir" | tr '.' '_')
-                tmux has-session -t "$tmux_session_name" > /dev/null
-                if [ $? != 0 ]; then
+                if ! tmux list-sessions | grep -q "^$tmux_session_name:"; then
                     tmux new-session -d -s "$tmux_session_name"
                 fi
                 popd > /dev/null
