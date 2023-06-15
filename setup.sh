@@ -11,7 +11,6 @@ pinstall() {
     done
 }
 
-
 yinstall() {
     # Install packages using yay.
     # Ex:
@@ -43,7 +42,6 @@ setup_system() {
     pinstall scrot
     pinstall htop
     pinstall feh
-    pinstall figlet
     pinstall nodejs npm
     pinstall unzip
     pinstall gnome-themes-extra
@@ -71,6 +69,11 @@ setup_system() {
     fi
     pinstall lsof
     pinstall gnome-font-viewer
+}
+
+setup_fun() {
+    pinstall figlet
+    pinstall cmatrix
 }
 
 setup_desktop() {
@@ -145,6 +148,7 @@ main() {
     setup_nvim
     setup_audio
     setup_apps
+    setup_fun
 }
 
 main
