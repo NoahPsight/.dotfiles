@@ -12,9 +12,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
-plugins=(git zsh-autosuggestions fast-syntax-highlighting)
+plugins=(git fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
