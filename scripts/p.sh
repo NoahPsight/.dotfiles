@@ -11,6 +11,13 @@ function p() {
         fi
         return 0
     fi
+    if [[ "$cmd" == "-d" ]]; then
+        sel=$(cat ~/.projects | fzf)
+        if [[ -n "$sel" ]]; then
+            sed -i "/$sel/d" ~/.projects
+        fi
+        return 0
+    fi
     while IFS= read -r line; do
         if echo "$line" | grep -q -- '--depth'; then
             local dir=$(echo "$line" | cut -d' ' -f1)
