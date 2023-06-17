@@ -29,13 +29,17 @@ function p() {
         *)
             local dir=$(printf '%s\n' "${projects[@]}" | fzf +m)
             if [[ -n "$dir" ]]; then
-                pushd "$dir" > /dev/null
                 local tmux_session_name=$(echo "$dir" | tr '.' '_')
                 if ! tmux list-sessions | grep -q "^$tmux_session_name:"; then
+                    pushd "$dir" > /dev/null
                     tmux new-session -d -s "$tmux_session_name"
+                    popd > /dev/null
                 fi
-                popd > /dev/null
-                tmux switch-client -t "$tmux_session_name" || tmux attach-session -t "$tmux_session_name"
+                if [[ -n "$TMUX" ]]; then
+                    tmux switch-client -t "$tmux_session_name"
+                else
+                    tmux attach-session -t "$tmux_session_name"
+                fi
             fi
             ;;
     esac
