@@ -17,6 +17,7 @@ plugins=(git fzf-tab)
 source $ZSH/oh-my-zsh.sh
 
 bindkey -v
+set ttimeoutlen=100
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
