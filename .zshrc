@@ -29,6 +29,8 @@ else
   export EDITOR='nvim'
 fi
 
+export PATH=$PATH:~/scripts
+
 alias externalssd="cd /mnt/externalssd/"
 alias v="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"

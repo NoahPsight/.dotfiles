@@ -37,9 +37,9 @@ setup_dotfiles() {
 setup_system() {
     pinstall ntfs-3g
     pinstall openssh
-    pinstall xclip
+    pinstall scrot xclip maim
+    sudo ln -s /home/fib/scripts/screenshot.sh /usr/local/bin/screenshot
     pinstall neofetch
-    pinstall scrot
     pinstall htop
     pinstall feh
     pinstall nodejs npm
