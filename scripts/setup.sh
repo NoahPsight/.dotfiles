@@ -138,6 +138,7 @@ setup_apps() {
     pinstall vimb
     pinstall obs-studio
     pinstall vlc
+    pinstall telegram-desktop
 }
 main() {
     sudo pacman -Syu --noconfirm

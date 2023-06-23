@@ -33,6 +33,7 @@ alias externalssd="cd /mnt/externalssd/"
 alias v="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
 alias p="~/scripts/p.sh"
+alias bgrng="feh --randomize --bg-fill /home/fib/wallpaper/"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

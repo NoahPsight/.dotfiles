@@ -1,5 +1,3 @@
 /mnt/externalssd/code --depth 2
 /home/fib/.config --depth 1
-/home/fib
-/home/fib/.dotfiles
-/home/fib/scripts
+/home/fib --depth 1
