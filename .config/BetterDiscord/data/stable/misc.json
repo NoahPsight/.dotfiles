@@ -2,7 +2,11 @@
     "version": "1.9.3",
     "drawerStates": {
         "settings": {
-            "customcss": false
+            "customcss": false,
+            "window": false,
+            "developer": false,
+            "editor": false,
+            "addons": true
         }
     }
 }

@@ -6,9 +6,10 @@ vim.opt.relativenumber = true
 vim.opt.ttimeout = false
 vim.opt.timeoutlen = 9999999
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+local tab_size = 4
+vim.opt.tabstop = tab_size
+vim.opt.softtabstop = tab_size
+vim.opt.shiftwidth = tab_size
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true

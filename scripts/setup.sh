@@ -38,6 +38,7 @@ setup_system() {
     pinstall ntfs-3g
     pinstall openssh
     pinstall scrot xclip maim
+    yinstall gromit-mpx
     sudo ln -s /home/fib/scripts/screenshot.sh /usr/local/bin/screenshot
     pinstall neofetch
     pinstall htop

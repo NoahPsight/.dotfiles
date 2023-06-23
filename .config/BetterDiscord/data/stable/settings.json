@@ -10,7 +10,7 @@
     },
     "customcss": {
         "customcss": true,
-        "liveUpdate": false,
+        "liveUpdate": true,
         "openAction": "settings"
     },
     "editor": {
@@ -23,7 +23,7 @@
     },
     "window": {
         "transparency": false,
-        "removeMinimumSize": false,
+        "removeMinimumSize": true,
         "frame": false
     },
     "developer": {
