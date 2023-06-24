@@ -1,5 +1,16 @@
 {
     "PluginRepo": true,
     "BDFDB": true,
-    "ThemeRepo": true
+    "ThemeRepo": true,
+    "KeywordTracker": true,
+    "ZeresPluginLibrary": true,
+    "RevealAllSpoilers": true,
+    "AvatarHover": true,
+    "BetterNsfwTag": true,
+    "BlurNSFW": false,
+    "enhancecodeblocks": true,
+    "InvisibleTyping": true,
+    "PermissionsViewer": false,
+    "KeepCurrentChannel": true,
+    "Double Click To Edit": true
 }

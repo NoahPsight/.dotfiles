@@ -8,5 +8,10 @@
             "editor": false,
             "addons": true
         }
+    },
+    "addonlistControls": {
+        "plugin": {
+            "view": "grid"
+        }
     }
 }

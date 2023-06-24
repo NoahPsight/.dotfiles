@@ -2,7 +2,9 @@
 	"all": {
 		"changeLogs": {
 			"BDFDB": "3.3.0",
+			"BetterNsfwTag": "1.3.2",
 			"PluginRepo": "2.5.1",
+			"RevealAllSpoilers": "1.1.1",
 			"ThemeRepo": "2.5.0"
 		},
 		"choices": {
