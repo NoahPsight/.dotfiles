@@ -5,12 +5,13 @@
     "KeywordTracker": true,
     "ZeresPluginLibrary": true,
     "RevealAllSpoilers": true,
-    "AvatarHover": true,
+    "AvatarHover": false,
     "BetterNsfwTag": true,
     "BlurNSFW": false,
     "enhancecodeblocks": true,
     "InvisibleTyping": true,
     "PermissionsViewer": false,
     "KeepCurrentChannel": true,
-    "Double Click To Edit": true
+    "Double Click To Edit": true,
+    "ViewProfilePicture": true
 }

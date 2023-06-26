@@ -49,9 +49,6 @@ setup_system() {
     gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
     mkdir -p ~/Downloads/
     pushd ~/Downloads/
-    if [ ! -f fib-bg.jpg ]; then
-        curl -L -o fib-bg.jpg https://cdnb.artstation.com/p/assets/images/images/048/005/729/medium/eva-jansen-tokio-055-cam-1-00000.jpg?1648989766
-    fi
     # if [ ! -d /usr/share/themes/Graphite-Dark-nord ]; then
     #     curl -O 'https://ocs-dl.fra1.cdn.digitaloceanspaces.com/data/files/1631876298/Graphite-Dark-nord.tar.xz?response-content-disposition=attachment%3B%2520Graphite-Dark-nord.tar.xz&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=RWJAQUNCHT7V2NCLZ2AL%2F20230610%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230610T221232Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=f3de43e04978f501d9271f3aa70dce371cfde332d9a1da053ea57e3f2a297db2' 
     #     tar -xf Graphite-Dark-nord.tar.xz
@@ -70,6 +67,7 @@ setup_system() {
     fi
     pinstall lsof
     pinstall gnome-font-viewer
+    pinstall docker
 }
 
 setup_fun() {
