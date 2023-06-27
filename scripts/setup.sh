@@ -67,7 +67,7 @@ setup_system() {
     fi
     pinstall lsof
     pinstall gnome-font-viewer
-    pinstall docker
+    pinstall docker docker-compose
 }
 
 setup_fun() {
@@ -109,6 +109,7 @@ setup_shell() {
     git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ohmyzsh_dir/plugins/fast-syntax-highlighting/
     git clone --depth 1 https://github.com/romkatv/powerlevel10k.git $ohmyzsh_dir/themes/powerlevel10k
     git clone https://github.com/Aloxaf/fzf-tab $ohmyzsh_dir/plugins/fzf-tab
+    git clone https://github.com/sobolevn/wakatime-zsh-plugin.git $ohmyzsh_dir/plugins/wakatime
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 

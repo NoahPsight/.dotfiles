@@ -542,7 +542,101 @@
             }
         },
         "enabled": true,
-        "unreadMatches": {},
+        "unreadMatches": {
+            "1122714522734579722": {
+                "guild_id": "1065010930389352499",
+                "attachments": [],
+                "author": {
+                    "avatar": "5e8159b67a74d92153c8cd79cce4889c",
+                    "bot": true,
+                    "discriminator": "6951",
+                    "id": "412347257233604609",
+                    "username": "Jockie Music (1)",
+                    "publicFlags": 65536,
+                    "avatarDecoration": null,
+                    "globalName": null
+                },
+                "channel_id": "1097327352687636500",
+                "components": [],
+                "content": "",
+                "edited_timestamp": null,
+                "embeds": [
+                    {
+                        "author": {
+                            "name": "Added Track"
+                        },
+                        "fields": [
+                            {
+                                "inline": false,
+                                "name": "Track",
+                                "value": "**MGMT - Little Dark Age**"
+                            },
+                            {
+                                "inline": true,
+                                "name": "Estimated time until played",
+                                "value": "02:43"
+                            },
+                            {
+                                "inline": true,
+                                "name": "Track Length",
+                                "value": "05:11"
+                            },
+                            {
+                                "inline": true,
+                                "name": "‎",
+                                "value": "‎"
+                            },
+                            {
+                                "inline": true,
+                                "name": "Position in upcoming",
+                                "value": "Next"
+                            },
+                            {
+                                "inline": true,
+                                "name": "Position in queue",
+                                "value": "5"
+                            },
+                            {
+                                "inline": true,
+                                "name": "‎",
+                                "value": "‎"
+                            }
+                        ],
+                        "footer": {
+                            "icon_url": "https://cdn.discordapp.com/avatars/194220097232044032/2050d4eb84b9ae3e539b5eb540b46153.png",
+                            "proxy_icon_url": "https://images-ext-2.discordapp.net/external/dqXpxYTCPOBcPPEo4ZrvgltJuuZ6cTQ9l4NecLGjuRo/https/cdn.discordapp.com/avatars/194220097232044032/2050d4eb84b9ae3e539b5eb540b46153.png",
+                            "text": "Requested by fibsus#0000"
+                        },
+                        "type": "rich"
+                    }
+                ],
+                "flags": 0,
+                "id": "1122714522734579722",
+                "member": {
+                    "avatar": null,
+                    "communication_disabled_until": null,
+                    "deaf": true,
+                    "flags": 0,
+                    "joined_at": "2023-04-17T08:40:51.413000+00:00",
+                    "mute": false,
+                    "nick": "Music",
+                    "pending": false,
+                    "premium_since": null,
+                    "roles": [
+                        "1097327067579826197"
+                    ]
+                },
+                "mention_everyone": false,
+                "mention_roles": [],
+                "mentions": [],
+                "pinned": false,
+                "referenced_message": null,
+                "timestamp": "2023-06-26T02:26:41.247000+00:00",
+                "tts": false,
+                "type": 0,
+                "_match": "/fib/"
+            }
+        },
         "notifications": true,
         "allowSelf": false,
         "allowEmbeds": true,
