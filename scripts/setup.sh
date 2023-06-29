@@ -10,7 +10,6 @@ pinstall() {
         fi
     done
 }
-
 yinstall() {
     # Install packages using yay.
     # Ex:
@@ -18,6 +17,18 @@ yinstall() {
     for package in "$@"; do
         if ! yay -Q "$package" >/dev/null 2>&1; then
             yay -S --noconfirm --needed "$package"
+        else
+            echo "$package is already installed."
+        fi
+    done
+}
+sinstall() {
+    # Install packages using snap.
+    # Ex:
+    #   sinstall neovim
+    for package in "$@"; do
+        if ! snap list "$package" >/dev/null 2>&1; then
+            sudo snap install "$package"
         else
             echo "$package is already installed."
         fi
@@ -64,6 +75,14 @@ setup_system() {
         makepkg -si
         popd
         rm -rf ~/yay/
+    fi
+    if ! command -v snap >/dev/null; then
+        git clone https://aur.archlinux.org/snapd.git ~/snapd/
+        pushd ~/snapd/
+        makepkg -si
+        popd
+        sudo systemctl enable --now snapd.socket
+        rm -rf ~/snapd/
     fi
     pinstall lsof
     pinstall gnome-font-viewer
@@ -139,6 +158,7 @@ setup_apps() {
     pinstall obs-studio
     pinstall vlc
     pinstall telegram-desktop
+    sinstall bluemail
 }
 main() {
     sudo pacman -Syu --noconfirm
