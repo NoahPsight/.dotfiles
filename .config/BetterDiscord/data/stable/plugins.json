@@ -13,5 +13,6 @@
     "PermissionsViewer": false,
     "KeepCurrentChannel": true,
     "Double Click To Edit": true,
-    "ViewProfilePicture": true
+    "ViewProfilePicture": true,
+    "LazyLoadChannels": false
 }

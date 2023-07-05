@@ -1,8 +1,6 @@
 pinstall() {
-    # Install packages.
-    # Ex:
-    #   pinstall neovim
     for package in "$@"; do
+        echo "Installing $package"
         if ! pacman -Q "$package" >/dev/null 2>&1; then
             sudo pacman -S --noconfirm --needed "$package"
         else
@@ -11,10 +9,8 @@ pinstall() {
     done
 }
 yinstall() {
-    # Install packages using yay.
-    # Ex:
-    #   yinstall neovim
     for package in "$@"; do
+        echo "Installing $package"
         if ! yay -Q "$package" >/dev/null 2>&1; then
             yay -S --noconfirm --needed "$package"
         else
@@ -23,10 +19,8 @@ yinstall() {
     done
 }
 sinstall() {
-    # Install packages using snap.
-    # Ex:
-    #   sinstall neovim
     for package in "$@"; do
+        echo "Installing $package"
         if ! snap list "$package" >/dev/null 2>&1; then
             sudo snap install "$package"
         else
@@ -89,13 +83,32 @@ setup_system() {
     pinstall docker docker-compose
 }
 
+
+setup_winapps(){
+    pinstall qemu virt-manager virt-viewer xfreerdp dnsmasq vde2 bridge-utils openbsd-netcat libguestfs ebtables iptables-nft
+    echo '''
+    unix_sock_rw_perms = "0770"
+    unix_sock_group = "libvirt"
+    ''' | sudo tee -a /etc/libvirt/libvirtd.conf &>/dev/null
+    mkdir -p ~/.config/libvirt/
+    echo 'uri_default = "qemu:///system"' >> ~/.config/libvirt/libvirt.conf
+    sudo usermod -aG libvirt $(whoami)
+    pushd ~/Downloads/
+    curl -LO https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+    git clone https://github.com/Fmstrat/winapps.git ~/winapps/
+    popd
+    mkdir -p ~/.config/winapps/
+    echo -e 'RDP_USER="fib"\nRDP_PASS="1234"\nMULTIMON="true"' > ~/.config/winapps/winapps.conf
+    ~/winapps/installer.sh
+}
+
 setup_fun() {
     pinstall figlet
     pinstall cmatrix
 }
 
 setup_desktop() {
-    pinstall xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+    pinstall xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xhost
     pinstall sddm
     pinstall base-devel xorg-init libx11 libxinerama libxft webkit2gtk
     pinstall picom
@@ -164,6 +177,7 @@ main() {
     sudo pacman -Syu --noconfirm
     rm delete_me
     setup_system
+    setup_winapps
     setup_dotfiles    
     setup_desktop
     setup_shell
@@ -173,5 +187,12 @@ main() {
     setup_fun
 }
 
-main
+if [ $# -eq 0 ]; then
+    main
+    exit 0
+else
+    for arg in "$@"; do
+        $arg
+    done
+fi
 
