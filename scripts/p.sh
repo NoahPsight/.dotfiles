@@ -43,7 +43,7 @@ function p() {
                     popd > /dev/null
                 fi
                 if [[ -n "$TMUX" ]]; then
-                    tmux switch-client -t "$tmux_session_name"
+                    tmux switch-client -n -t "$tmux_session_name"
                 else
                     tmux attach-session -t "$tmux_session_name"
                 fi

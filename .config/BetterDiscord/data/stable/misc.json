@@ -3,7 +3,7 @@
     "drawerStates": {
         "settings": {
             "customcss": false,
-            "window": false,
+            "window": true,
             "developer": false,
             "editor": false,
             "addons": true

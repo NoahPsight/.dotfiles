@@ -81,6 +81,8 @@ setup_system() {
     pinstall lsof
     pinstall gnome-font-viewer
     pinstall docker docker-compose
+    pinstall iwd
+    systemctl enable --now iwd.service
 }
 
 
@@ -177,7 +179,7 @@ main() {
     sudo pacman -Syu --noconfirm
     rm delete_me
     setup_system
-    setup_winapps
+    # setup_winapps
     setup_dotfiles    
     setup_desktop
     setup_shell
