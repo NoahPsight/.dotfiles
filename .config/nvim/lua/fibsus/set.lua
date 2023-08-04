@@ -25,7 +25,7 @@ vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
