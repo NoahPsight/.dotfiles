@@ -15,6 +15,8 @@ plugins=(git fzf-tab fast-syntax-highlighting wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
+setxkbmap -option caps:escape
+
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -32,6 +34,8 @@ alias v="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
 alias p="~/scripts/p.sh"
 alias bgrng="feh --randomize --bg-fill /home/fib/wallpaper/"
+alias createpythonenv="python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt"
+alias pythonenv="source .venv/bin/activate"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

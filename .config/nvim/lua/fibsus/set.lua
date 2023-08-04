@@ -1,7 +1,11 @@
 vim.o.mouse = ''
 
+vim.opt.cursorline = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
+
+vim.opt.list = false
+vim.opt.listchars:append("eol:↴")
 
 vim.opt.ttimeout = false
 vim.opt.timeoutlen = 9999999
@@ -21,7 +25,7 @@ vim.opt.backup = false
 vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true

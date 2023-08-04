@@ -1,6 +1,9 @@
 [user]
-        name = NoahPsight
-        email = 120606151+NoahPsight@users.noreply.github.com
+    name = NoahPsight
+    email = 120606151+NoahPsight@users.noreply.github.com
+
+[init]
+    defaultBranch = main
 
 [core]
     editor = nvim

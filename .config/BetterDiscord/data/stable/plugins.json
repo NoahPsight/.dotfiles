@@ -1,13 +1,13 @@
 {
-    "BDFDB": false,
+    "BDFDB": true,
     "ZeresPluginLibrary": false,
     "BetterNsfwTag": false,
     "Double Click To Edit": false,
-    "InvisibleTyping": false,
+    "InvisibleTyping": true,
     "KeepCurrentChannel": false,
     "KeywordTracker": false,
-    "PluginRepo": false,
+    "PluginRepo": true,
     "RevealAllSpoilers": false,
-    "ThemeRepo": false,
+    "ThemeRepo": true,
     "ViewProfilePicture": false
 }
