@@ -33,7 +33,7 @@ alias externalssd="cd /mnt/externalssd/"
 alias v="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
 alias p="~/scripts/p.sh"
-alias bgrng="feh --randomize --bg-fill /home/fib/wallpaper/"
+alias bgrng='FILE=$(find ~/wallpaper -type f | shuf -n 1) ; QUOTE=$(find ~/quotes -type f | shuf -n 1 | xargs cat) ; convert "$FILE" -blur 0x8 -font "Z003-MediumItalic" -fill white -pointsize 50 -gravity center -annotate +0+0 "$QUOTE" ~/current_wallpaper.png 2>/dev/null ; feh --bg-fill ~/current_wallpaper.png'
 alias createpythonenv="python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt"
 alias pythonenv="source .venv/bin/activate"
 
