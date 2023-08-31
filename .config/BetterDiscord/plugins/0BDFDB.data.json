@@ -49,6 +49,7 @@
 		},
 		"UserBadges": {
 			"active_developer": "6bdc42827a38498929a4920da12695d9",
+			"automod": "f2459b691ac7453ed6039bbcfaccbfcd",
 			"bot_commands": "6f9e37f9029ff57aef81db857890005e",
 			"bug_hunter_lvl1": "2717692c7dca7289b35297368a940dd0",
 			"bug_hunter_lvl2": "848f79194d4be5ff5f81505cbd0ce1e6",
@@ -130,6 +131,14 @@
 		"ChannelUtils": {"props": ["selectChannel", "selectPrivateChannel"]},
 		"ChatRestrictionUtils": {"strings": ["openWarningPopout", "userCanUsePremiumMessageLength"], "exported": false, "value": "exports", "map": {
 			"applyChatRestrictions": ["openWarningPopout", "userCanUsePremiumMessageLength"]
+		}},
+		"ConnectionMetadataUtils": {"strings": ["connectedAccountVanityMetadataTag", "CONNECTIONS_PROFILE_GENERIC_VANITY_METRIC"], "exported": false, "value": "exports", "map": {
+			"getEbay": ["PC.EBAY_TOP_RATED_SELLER"],
+			"getPaypal": ["PC.PAYPAL_VERIFIED"],
+			"getReddit": ["PC.REDDIT_GOLD"],
+			"getSteam": ["PC.STEAM_GAME_COUNT"],
+			"getTiktok": ["PC.TIKTOK_FOLLOWER_COUNT"],
+			"getTwitter": ["PC.TWITTER_STATUSES_COUNT"]
 		}},
 		"ConnectionProviderUtils": {"props": ["get", "isSupported", "filter"]},
 		"ConnectionUtils": {"props": ["setShowActivity", "setVisibility"]},

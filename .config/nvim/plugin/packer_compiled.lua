@@ -180,6 +180,11 @@ _G.packer_plugins = {
     path = "/home/fib/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
     url = "https://github.com/theprimeagen/refactoring.nvim"
   },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/fib/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/fib/.local/share/nvim/site/pack/packer/start/telescope.nvim",

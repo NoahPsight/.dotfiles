@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx       = 3;   /* border pixel of windows */
+static const unsigned int borderpx       = 1;   /* border pixel of windows */
 #if ROUNDED_CORNERS_PATCH
 static const int corner_radius           = 10;
 #endif // ROUNDED_CORNERS_PATCH

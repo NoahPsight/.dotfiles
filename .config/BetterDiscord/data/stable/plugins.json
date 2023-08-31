@@ -9,5 +9,7 @@
     "PluginRepo": true,
     "RevealAllSpoilers": false,
     "ThemeRepo": true,
-    "ViewProfilePicture": false
+    "ViewProfilePicture": false,
+    "DoNotTrack": true,
+    "StatusEverywhere": false
 }
