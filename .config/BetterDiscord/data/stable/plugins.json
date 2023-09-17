@@ -1,15 +1,9 @@
 {
     "BDFDB": true,
-    "ZeresPluginLibrary": false,
-    "BetterNsfwTag": false,
-    "Double Click To Edit": false,
-    "InvisibleTyping": true,
-    "KeepCurrentChannel": false,
-    "KeywordTracker": false,
-    "PluginRepo": true,
-    "RevealAllSpoilers": false,
-    "ThemeRepo": true,
-    "ViewProfilePicture": false,
+    "ZeresPluginLibrary": true,
     "DoNotTrack": true,
-    "StatusEverywhere": false
+    "InvisibleTyping": true,
+    "PluginRepo": true,
+    "ThemeRepo": true,
+    "FreeEmojis": true
 }
