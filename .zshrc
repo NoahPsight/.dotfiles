@@ -1,14 +1,5 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 plugins=(git fzf-tab fast-syntax-highlighting wakatime)
-
 source $ZSH/oh-my-zsh.sh
 
 bindkey -M menuselect 'h' vi-backward-char
@@ -34,3 +25,5 @@ alias bgrng='~/scripts/bgrng.sh'
 
 alias pyenv="set +a; set -a; source .env; source .venv/bin/activate"
 alias newpyenv="touch .env && python -m venv .venv && pyenv && pip install -r requirements.txt"
+
+eval "$(starship init zsh)"
