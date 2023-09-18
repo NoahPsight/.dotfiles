@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
+PROJECTS_FILE=~/.projects
+PROJECTS_HISTORY_FILE=~/.projects_history
+
+touch $PROJECTS_FILE
+touch $PROJECTS_HISTORY_FILE
+
 source ~/.zshenv
 
 function dir_to_str {
@@ -10,39 +16,41 @@ function dir_to_str {
     echo "$str"
 }
 
-
 function array_search() {
-  local target=$1
-  shift
-  local arr=("${@}")
-  for i in "${!arr[@]}"; do
-    if [[ "${arr[$i]}" == "$target" ]]; then
-      echo $i
-      return
-    fi
-  done
-  echo -1
+    local target=$1
+    shift
+    local arr=("${@}")
+    for i in "${!arr[@]}"; do
+        if [[ "${arr[$i]}" == "$target" ]]; then
+            echo $i
+            return
+        fi
+    done
+    echo -1
 }
 
 function p() {
     local cmd="$1"
     local projects=()
     local display_projects=()
+    
     if [[ "$cmd" == "-a" ]]; then
         if [[ -z "$2" ]]; then
-            echo "$(pwd)" >> ~/.projects
+            echo "$(pwd)" >> $PROJECTS_FILE
         else
-            echo "${@:2}" >> ~/.projects
+            echo "${@:2}" >> $PROJECTS_FILE
         fi
         return 0
     fi
+
     if [[ "$cmd" == "-d" ]]; then
-        sel=$(cat ~/.projects | fzf)
+        sel=$(cat $PROJECTS_FILE | fzf)
         if [[ -n "$sel" ]]; then
-            sed -i "/$sel/d" ~/.projects
+            sed -i "/$sel/d" $PROJECTS_FILE
         fi
         return 0
     fi
+
     while IFS= read -r line; do
         if echo "$line" | grep -q -- '--depth'; then
             local dir=$(echo "$line" | cut -d' ' -f1)
@@ -55,13 +63,14 @@ function p() {
             projects+=("$line")
             display_projects+=( "$(dir_to_str "$line")" )
         fi
-    done < ~/.projects
+    done < $PROJECTS_FILE
+    
     case "$cmd" in
         -l)
             printf '%s\n' "${projects[@]}"
             ;;
         *)
-            local fzf_through=$(cat ~/.projects_history)
+            local fzf_through=$(cat $PROJECTS_HISTORY_FILE)
             fzf_through=$(printf '%s\n' "$fzf_through" | awk 'NR==FNR{a[$0];next} ($0 in a)' <(printf '%s\n' "${display_projects[@]}") -)
             fzf_through=$( \
                 echo "$fzf_through" \
@@ -76,8 +85,8 @@ function p() {
             fi
             local idx=$(printf '%s\n' $fzf_through | fzf +m)
             if [[ -n "$idx" ]]; then
-                echo -e "$idx\n$(cat ~/.projects_history)" > ~/.projects_history
-                head -n 2000 ~/.projects_history > ~/.projects_history.tmp && mv ~/.projects_history.tmp ~/.projects_history
+                echo -e "$idx\n$(cat $PROJECTS_HISTORY_FILE)" > $PROJECTS_HISTORY_FILE
+                head -n 2000 $PROJECTS_HISTORY_FILE > $PROJECTS_HISTORY_FILE.tmp && mv $PROJECTS_HISTORY_FILE.tmp $PROJECTS_HISTORY_FILE
                 local idx=$(array_search "$idx" "${display_projects[@]}")
                 local dir="${projects[$idx]}"
                 local tmux_session_name=\"$(dir_to_str "$dir")\"
