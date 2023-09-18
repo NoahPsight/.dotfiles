@@ -27,3 +27,8 @@ alias pyenv="set +a; set -a; source .env; source .venv/bin/activate"
 alias newpyenv="touch .env && python -m venv .venv && pyenv && pip install -r requirements.txt"
 
 eval "$(starship init zsh)"
+   
+tmux list-sessions 2>/dev/null | grep -q "attached"
+if [ $? != 0 ]; then
+    p
+fi
