@@ -68,9 +68,12 @@ function p() {
                 "${display_projects[@]}" \
             )
             fzf_through=$(printf '%s\n' "$fzf_through" | tr ' ' '\n' | awk '!seen[$0]++')
-            local current_tmux_session=$(tmux display-message -p '#S')
-            current_tmux_session="${current_tmux_session//\"/}"
-            fzf_through=$(printf '%s\n' "$fzf_through" | grep -v "^$current_tmux_session$")
+            tmux list-sessions 2>/dev/null | grep -q "attached"
+            if [ $? = 0 ]; then
+                local current_tmux_session=$(tmux display-message -p '#S')
+                current_tmux_session="${current_tmux_session//\"/}"
+                fzf_through=$(printf '%s\n' "$fzf_through" | grep -v "^$current_tmux_session$")
+            fi
             local idx=$(printf '%s\n' $fzf_through | fzf +m)
             if [[ -n "$idx" ]]; then
                 echo -e "$idx\n$(cat ~/.projects_history)" > ~/.projects_history
