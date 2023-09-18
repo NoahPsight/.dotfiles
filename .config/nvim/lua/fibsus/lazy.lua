@@ -1,10 +1,9 @@
 local plugins = {
+    -- Themes
     'folke/tokyonight.nvim',
     'rose-pine/neovim',
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
-    },
+    -- Functionality
+    'nvim-telescope/telescope.nvim',
     'nvim-lua/plenary.nvim',
     {
         'rmagatti/auto-session',
@@ -27,10 +26,7 @@ local plugins = {
     'wakatime/vim-wakatime',
     'christoomey/vim-tmux-navigator',
     -- LSP
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-    },
+    'VonHeikemen/lsp-zero.nvim',
     -- LSP Support
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',

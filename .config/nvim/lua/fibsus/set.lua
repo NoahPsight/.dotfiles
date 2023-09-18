@@ -5,7 +5,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.list = false
---vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("eol:↴")
 
 vim.opt.ttimeout = false
 vim.opt.timeoutlen = 9999999
