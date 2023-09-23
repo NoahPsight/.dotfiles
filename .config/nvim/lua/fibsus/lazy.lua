@@ -1,3 +1,4 @@
+
 local plugins = {
     -- Themes
     'folke/tokyonight.nvim',
@@ -25,23 +26,17 @@ local plugins = {
     'github/copilot.vim',
     'wakatime/vim-wakatime',
     'christoomey/vim-tmux-navigator',
-    -- LSP
-    'VonHeikemen/lsp-zero.nvim',
-    -- LSP Support
-    'neovim/nvim-lspconfig',
+    -- LSP 
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
+    -- LSP Support
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
-    -- Snippets
+    'neovim/nvim-lspconfig',
+    -- Autocompletion
     'L3MON4D3/LuaSnip',
-    'rafamadriz/friendly-snippets',
-    -- icons
+    'hrsh7th/nvim-cmp',
+    -- Icons
     'kyazdani42/nvim-web-devicons',
     'ryanoasis/vim-devicons',
 }

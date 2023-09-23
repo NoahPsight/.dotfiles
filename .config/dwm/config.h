@@ -1,24 +1,68 @@
-/* See LICENSE file for copyright and license details. */
-
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 2;       /* snap pixel */
-static const int showbar            = 0;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static unsigned int borderpx    = 0;  /* border pixel of windows */
+static unsigned int gappx       = 0;  /* gaps between windows */
+static unsigned int snap        = 16; /* snap pixel */
+static int user_bh              = 0;  /* 0 means that dwm will calculate bar height */
+static int vertpad              = 0;  /* vertical padding of bar */
+static int sidepad              = 0;  /* horizontal padding of bar */
+static int lrpadding            = 0;  /* left and right padding for text */
+
+static const int showbar        = 1;  /* 0 means no bar */
+static const int topbar         = 1;  /* 0 means bottom bar */
+static const int viewonrulestag = 1;  /* 1 means when open applications view will move to tags defined in rules */
+static const int colorfultag    = 1;  /* 0 means use SchemeSel for selected non vacant tag */
+static int bordercolors         = 0;  /* 1 means clients will use the border color in rules */ 
+
+static char font[]              = { "Hack:size=14:antialias=true:autohint=true" };
+static char icons[]             = { "SymbolsNerdFont:size=16:antialias=true:autohint=true" };
+static const char *fonts[]      = { font, icons };
+
+static char bgd[]               = "#000000";  /* Background  */
+static char fgd[]               = "#ffffff";  /* Foreground */
+static char col0[]              = "#000000";  /* Black */ 
+static char col1[]              = "#cc0403";  /* Red */ 
+static char col2[]              = "#19cb00";  /* Green */ 
+static char col3[]              = "#cecb00";  /* Yellow */ 
+static char col4[]              = "#001cd1";  /* Blue */ 
+static char col5[]              = "#cb1ed1";  /* Magenta */ 
+static char col6[]              = "#0dcdcd";  /* Cyan */ 
+static char col7[]              = "#e5e5e5";  /* White */ 
+static char col8[]              = "#4d4d4d";  /* Bright Black */ 
+static char col9[]              = "#3e0605";  /* Bright Red */ 
+static char col10[]             = "#23fd00";  /* Bright Green */ 
+static char col11[]             = "#fffd00";  /* Bright Yellow */ 
+static char col12[]             = "#0026ff";  /* Bright Blue */ 
+static char col13[]             = "#fd28ff";  /* Bright Magenta */ 
+static char col14[]             = "#14ffff";  /* Bright Cyan */ 
+static char col15[]             = "#ffffff";  /* Bright White */ 
+
+static char *termcolor[] = { col0, col1, col2, col3, col4, col5, col6, col7,
+                             col8, col9, col10, col11, col12, col13, col14, col15, bgd, fgd };
+
+static char *colors[][3] = {
+       /*                     fg        bg       border   */
+       [SchemeNorm]       = { col8,     bgd,     bgd  },
+       [SchemeSel]        = { col15,    bgd,     col9 },
+       [SchemeTitle]      = { col15,    bgd,     bgd  },
+       [SchemeTag]        = { col8,     bgd,     bgd  },
+       [SchemeTag1]       = { col9,     bgd,     bgd  },
+       [SchemeTag2]       = { col10,    bgd,     bgd  },
+       [SchemeTag3]       = { col11,    bgd,     bgd  },
+       [SchemeTag4]       = { col12,    bgd,     bgd  },
+       [SchemeTag5]       = { col13,    bgd,     bgd  },
+       [SchemeLayout]     = { col14,    bgd,     bgd  },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "󰖟", "󰆍", "󰉋", "", "" };
+
+static const int tagschemes[] = {
+    SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5 };
+
+static unsigned int ulinepad      = 3;    /* horizontal padding between the underline and tag */
+static unsigned int ulinestroke   = 3;    /* thickness / height of the underline */
+static unsigned int ulinevoffset  = 0;    /* how far above the bottom of the bar the line should appear */
+static const int ulineall         = 0;    /
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -26,8 +70,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Kitty",    NULL,       NULL,       0 << 0,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Discord",  NULL,       NULL,       2 << 2,       0,           -1 },
 };
 
 /* layout(s) */
@@ -51,12 +96,8 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
-/* commands */
 static const char *roficmd[] = { "rofi", "-show", "run", NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
