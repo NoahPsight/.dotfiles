@@ -30,3 +30,7 @@ tmux list-sessions 2>/dev/null | grep -q "attached"
 if [ $? != 0 ]; then
     bash ~/scripts/jumper.sh
 fi
+
+autoload -U bashcompinit
+bashcompinit
+source ~/scripts/jumper.sh
