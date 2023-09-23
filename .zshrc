@@ -2,6 +2,16 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(git fzf-tab fast-syntax-highlighting zsh-wakatime)
 source $ZSH/oh-my-zsh.sh
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+if [[ -f ".python-version" ]] && pyenv versions --bare | grep -q "$(cat .python-version)"; then
+  #echo "Virtual environment exists."
+  pyenv local $(cat .python-version)
+else
+  # echo "No virtual environment."
+fi
+
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
@@ -20,9 +30,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
 alias bgrng='~/scripts/bgrng.sh'
-
-alias pyenv="set +a; set -a; source .env; source .venv/bin/activate"
-alias newpyenv="touch .env && python -m venv .venv && pyenv && pip install -r requirements.txt"
 
 eval "$(starship init zsh)"
    
