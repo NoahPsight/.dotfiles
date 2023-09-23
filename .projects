@@ -1,5 +1,5 @@
-/mnt/externalssd/code --depth 2
+/media/fib/ExternalSSD/code --depth 2
+/media/fib/ExternalSSD/desktop/csj/invoices
 /home/fib/.config --depth 1
 /home/fib --depth 1
-/mnt/externalssd/desktop/csj/invoices
 /tmp

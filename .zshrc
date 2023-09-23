@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git fzf-tab fast-syntax-highlighting wakatime)
+plugins=(git fzf-tab fast-syntax-highlighting zsh-wakatime)
 source $ZSH/oh-my-zsh.sh
 
 bindkey -M menuselect 'h' vi-backward-char
@@ -15,12 +15,10 @@ else
 fi
 
 alias ls="ls -a --color=auto"
-alias externalssd="cd /mnt/externalssd/"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
-alias p="sh ~/scripts/p.sh"
 alias bgrng='~/scripts/bgrng.sh'
 
 alias pyenv="set +a; set -a; source .env; source .venv/bin/activate"
@@ -30,5 +28,5 @@ eval "$(starship init zsh)"
    
 tmux list-sessions 2>/dev/null | grep -q "attached"
 if [ $? != 0 ]; then
-    p
+    bash ~/scripts/jumper.sh
 fi
