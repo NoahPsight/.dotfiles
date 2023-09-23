@@ -41,6 +41,9 @@ local plugins = {
     -- Snippets
     'L3MON4D3/LuaSnip',
     'rafamadriz/friendly-snippets',
+    -- icons
+    'kyazdani42/nvim-web-devicons',
+    'ryanoasis/vim-devicons',
 }
 
 local opts = {}
