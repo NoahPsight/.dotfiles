@@ -5,12 +5,7 @@ source $ZSH/oh-my-zsh.sh
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-if [[ -f ".python-version" ]] && pyenv versions --bare | grep -q "$(cat .python-version)"; then
-  #echo "Virtual environment exists."
-  pyenv local $(cat .python-version)
-else
-  # echo "No virtual environment."
-fi
+eval "$(pyenv virtualenv-init -)"
 
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
