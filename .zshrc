@@ -8,7 +8,8 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
-alias bgrng='~/scripts/bgrng.sh'
+alias bgrng='~/Scripts/bgrng.sh'
+alias clip="xclip -selection clipboard"
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"

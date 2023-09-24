@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FILE=$(find ~/wallpaper -follow -type f | shuf -n 1)
-QUOTE=$(find ~/quotes -follow -type f | shuf -n 1 | xargs cat)
+FILE=$(find ~/Wallpaper -follow -type f | shuf -n 1)
+QUOTE=$(find ~/Quotes -follow -type f | shuf -n 1 | xargs cat)
 
 FONT="FiraCode Nerd Font"
 FONT="Z003-MediumItalic"
