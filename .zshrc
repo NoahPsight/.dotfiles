@@ -3,7 +3,10 @@ if [ $? != 0 ]; then
     bash ~/Scripts/jumper.sh
 fi
     
-alias ls="ls -a --color=auto"
+alias paru="paru --noconfirm"
+alias pacman="pacman --noconfirm"
+alias yay="yay --noconfirm"
+alias ls="exa -a"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
@@ -14,7 +17,6 @@ alias clip="xclip -selection clipboard"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
@@ -39,6 +41,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 zinit ice theme"yes"
-zinit light Aloxaf/fzf-tab
+#zinit light Aloxaf/fzf-tab
 
 eval "$(starship init zsh)"

@@ -11,6 +11,7 @@ source ~/.zshenv
 dir_to_str() {
     local str="$1"
     str="${str//\/home\/$USER/\~}"
+    str="${str/\/media\/ExternalSSD\/code/code}"
     str="${str//./}"
     echo "$str"
 }
