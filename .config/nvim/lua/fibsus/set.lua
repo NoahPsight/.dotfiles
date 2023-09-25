@@ -2,8 +2,6 @@ vim.opt.cursorline = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.clipboard = "unnamedplus"
-
 vim.opt.list = false
 vim.opt.listchars:append("eol:↴")
 

@@ -6,7 +6,7 @@ fi
 alias paru="paru --noconfirm"
 alias pacman="pacman --noconfirm"
 alias yay="yay --noconfirm"
-alias ls="exa -a"
+# alias ls="exa -a"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
