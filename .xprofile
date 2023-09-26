@@ -1,2 +1,1 @@
-setxkbmap -option caps:escape
-picom -b
+setxkbmap -option caps:swapescape
