@@ -1,9 +1,9 @@
 {
     "BDFDB": true,
     "ZeresPluginLibrary": true,
+    "FreeEmojis": true,
     "DoNotTrack": true,
     "InvisibleTyping": true,
     "PluginRepo": true,
-    "ThemeRepo": true,
-    "FreeEmojis": true
+    "ThemeRepo": true
 }

@@ -6,11 +6,11 @@ fi
 alias paru="paru --noconfirm"
 alias pacman="pacman --noconfirm"
 alias yay="yay --noconfirm"
-# alias ls="exa -a"
+alias ls="exa -a"
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-alias stow.="pushd ~/.dotfiles/ > /dev/null; stow -D .; stow .; popd > /dev/null"
+alias stow.="pushd ~/.dotfiles/; stow -D .; stow .; popd"
 alias bgrng='~/Scripts/bgrng.sh'
 alias clip="xclip -selection clipboard"
 
@@ -35,12 +35,13 @@ fi
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-zinit ice theme"yes"
-#zinit light Aloxaf/fzf-tab
+
+zinit light zdharma-continuum/zinit-annex-as-monitor
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
+zinit light zdharma-continuum/zinit-annex-patch-dl
+zinit light zdharma-continuum/zinit-annex-rust
+zinit light Aloxaf/fzf-tab
+zicompinit; zicdreplay
 
 eval "$(starship init zsh)"
+

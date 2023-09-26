@@ -4,10 +4,6 @@ FILE=$(find ~/Wallpaper -follow -type f | shuf -n 1)
 QUOTE=$(find ~/Quotes -follow -type f | shuf -n 1 | xargs cat)
 FONT="Z003-Medium-Italic"
 
-echo "$FILE"
-echo "$QUOTE"
-echo "$FONT"
-
 convert "$FILE" \
     -resize 1920x1080! \
     -blur 0x0 \
@@ -20,3 +16,5 @@ convert /tmp/temp_resized.png \
     /tmp/current_wallpaper.png
 
 rm /tmp/temp_resized.png
+pkill swaybg
+swaybg -i /tmp/current_wallpaper.png &
