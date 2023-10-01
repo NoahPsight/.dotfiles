@@ -1,8 +1,7 @@
-function paru_with_update {
-    paru --noconfirm "$@"
-    paru -Qqen > ~/packages.txt
+paru() {
+    command paru --noconfirm "$@"
+    command paru -Qqen > ~/packages.txt
 }
-alias paru="paru_with_update"
 alias pacman="pacman --noconfirm"
 alias yay="echo 'Wtf no yay'"
 
@@ -46,6 +45,7 @@ zinit light zdharma-continuum/zinit-annex-bin-gem-node
 zinit light zdharma-continuum/zinit-annex-patch-dl
 zinit light zdharma-continuum/zinit-annex-rust
 zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
 zicompinit; zicdreplay
 
 eval "$(starship init zsh)"

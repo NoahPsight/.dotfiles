@@ -1,3 +1,4 @@
+ansible
 ark
 base
 base-devel
@@ -59,6 +60,7 @@ slurp
 stow
 swappy
 tmux
+v4l2loopback-dkms
 vim
 waybar
 wireplumber
