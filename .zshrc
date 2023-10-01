@@ -1,16 +1,20 @@
-tmux list-sessions 2>/dev/null | grep -q "attached"
-if [ $? != 0 ]; then
-    bash ~/Scripts/jumper.sh
-fi
-    
-alias paru="paru --noconfirm"
+function paru_with_update {
+    paru --noconfirm "$@"
+    paru -Qqen > ~/packages.txt
+}
+alias paru="paru_with_update"
 alias pacman="pacman --noconfirm"
-alias yay="yay --noconfirm"
-alias ls="exa -a"
+alias yay="echo 'Wtf no yay'"
+
+alias  l='eza -l  --icons'
+alias ls='eza -1  --icons'
+alias ll='eza -la --icons'
+alias ld='eza -lD --icons'
+
 alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+
 alias stow.="pushd ~/.dotfiles/; stow -D .; stow .; popd"
+
 alias bgrng='~/Scripts/bgrng.sh'
 alias clip="xclip -selection clipboard"
 
@@ -46,3 +50,4 @@ zicompinit; zicdreplay
 
 eval "$(starship init zsh)"
 
+neofetch

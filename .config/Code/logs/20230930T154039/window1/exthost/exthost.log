@@ -1,0 +1,14 @@
+2023-09-30 15:40:40.483 [info] Extension host with pid 1950 started
+2023-09-30 15:40:40.483 [info] Skipping acquiring lock for /home/fib/.config/Code/User/workspaceStorage/cd74676f2fe3360d30ec34203c43de96.
+2023-09-30 15:40:40.507 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-09-30 15:40:40.554 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-09-30 15:40:40.557 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: true, activationEvent: '*'
+2023-09-30 15:40:40.566 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-09-30 15:40:40.640 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-09-30 15:40:40.676 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2023-09-30 15:40:40.709 [info] Eager extensions activated
+2023-09-30 15:40:40.738 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-09-30 15:40:40.740 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-09-30 15:49:17.921 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-09-30 15:51:19.768 [info] Extension host terminating: renderer closed the MessagePort
+2023-09-30 15:51:19.773 [info] Extension host with pid 1950 exiting with code 0
