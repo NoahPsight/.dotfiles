@@ -6,6 +6,7 @@ bluez
 bluez-utils
 brightnessctl
 cliphist
+discord
 dolphin
 dunst
 eza
