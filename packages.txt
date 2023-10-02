@@ -9,6 +9,8 @@ brightnessctl
 btop
 cliphist
 discord
+docker
+docker-compose
 dolphin
 dunst
 eza
@@ -27,6 +29,7 @@ jq
 keepassxc
 kitty
 kvantum
+less
 linux
 linux-firmware
 linux-headers
