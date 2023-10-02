@@ -38,6 +38,7 @@ neofetch
 neovim
 network-manager-applet
 networkmanager
+npm
 ntfs-3g
 nvidia-dkms
 nvidia-utils
@@ -64,7 +65,9 @@ stow
 swappy
 tmux
 tree
+ttf-firacode-nerd
 udiskie
+unzip
 v4l2loopback-dkms
 vim
 waybar

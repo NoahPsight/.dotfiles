@@ -5,5 +5,7 @@
     "DoNotTrack": true,
     "InvisibleTyping": true,
     "PluginRepo": true,
-    "ThemeRepo": true
+    "ThemeRepo": true,
+    "Hide Channels": true,
+    "Hide Chat Icons": true
 }
