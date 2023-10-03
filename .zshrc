@@ -51,4 +51,10 @@ zicompinit; zicdreplay
 
 eval "$(starship init zsh)"
 
+set -a
+if [[ -f .env ]]; then
+  source ./.env
+  set +a
+fi
+
 neofetch
