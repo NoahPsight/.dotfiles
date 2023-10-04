@@ -21,6 +21,7 @@ git
 gnome-font-viewer
 grim
 grub
+grub-customizer
 gst-plugin-pipewire
 gtk-engine-murrine
 gtk-engines
@@ -39,10 +40,12 @@ neofetch
 neovim
 network-manager-applet
 networkmanager
+nfs-utils
 npm
 ntfs-3g
 nvidia-dkms
 nvidia-utils
+os-prober
 pacman-contrib
 pamixer
 pavucontrol
