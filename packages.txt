@@ -15,8 +15,10 @@ dolphin
 dunst
 eza
 fd
+figlet
 firefox
 fzf
+gimp
 git
 gnome-font-viewer
 grim
@@ -28,13 +30,17 @@ gtk-engines
 imagemagick
 intel-ucode
 jq
-keepassxc
 kitty
 kvantum
 less
+lib32-nvidia-utils
+lib32-vulkan-icd-loader
+libreoffice-fresh
 linux
 linux-firmware
 linux-headers
+lolcat
+lutris
 lxappearance
 neofetch
 neovim
@@ -44,6 +50,7 @@ nfs-utils
 npm
 ntfs-3g
 nvidia-dkms
+nvidia-settings
 nvidia-utils
 os-prober
 pacman-contrib
@@ -77,5 +84,6 @@ vim
 waybar
 wireplumber
 xdg-desktop-portal-hyprland
+xorg-xhost
 zram-generator
 zsh

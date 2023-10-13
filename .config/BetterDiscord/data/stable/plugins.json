@@ -3,9 +3,9 @@
     "ZeresPluginLibrary": true,
     "FreeEmojis": true,
     "DoNotTrack": true,
+    "Hide Channels": true,
+    "Hide Chat Icons": true,
     "InvisibleTyping": true,
     "PluginRepo": true,
-    "ThemeRepo": true,
-    "Hide Channels": true,
-    "Hide Chat Icons": true
+    "ThemeRepo": true
 }

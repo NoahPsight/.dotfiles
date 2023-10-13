@@ -2,15 +2,19 @@ paru() {
     command paru --noconfirm "$@"
     command paru -Qqen > ~/packages.txt
 }
-alias pacman="pacman --noconfirm"
-alias yay="echo 'Wtf no yay'"
+alias paruclean="sudo pacman -Rsn $(pacman -Qdtq)"
+
+alias brb="clear && figlet BRB | lolcat"
 
 alias  l='eza -l  --icons'
 alias ls='eza -1  --icons'
 alias ll='eza -la --icons'
 alias ld='eza -lD --icons'
 
-alias v="nvim"
+alias v="/bin/nvim"
+alias vi="/bin/nvim"
+alias vim="/bin/nvim"
+alias emacs="/bin/nvim"
 
 alias stow.="pushd ~/.dotfiles/; stow -D .; stow .; popd"
 
