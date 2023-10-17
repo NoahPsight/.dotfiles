@@ -74,6 +74,7 @@ ripgrep
 slurp
 stow
 swappy
+time
 tmux
 tree
 ttf-firacode-nerd

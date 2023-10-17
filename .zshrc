@@ -11,6 +11,7 @@ alias ls='eza -1  --icons'
 alias ll='eza -la --icons'
 alias ld='eza -lD --icons'
 
+alias samwise='figlet Samwise | lolcat'
 alias v="/bin/nvim"
 alias vi="/bin/nvim"
 alias vim="/bin/nvim"
