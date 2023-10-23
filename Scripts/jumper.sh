@@ -90,7 +90,11 @@ main_execution() {
             popd > /dev/null
         fi
         
-        [[ -n "$TMUX" ]] && tmux switch-client -n -t "$tmux_session_name" || tmux attach-session -t "$tmux_session_name"
+        if [[ -n "$TMUX" ]]; then
+          tmux switch-client -n -t "$tmux_session_name" 
+        else
+          tmux attach-session -t "$tmux_session_name"
+        fi
     fi
 }
 
