@@ -8,6 +8,7 @@ bluez-utils
 brightnessctl
 btop
 cliphist
+croc
 discord
 docker
 docker-compose
@@ -15,6 +16,7 @@ dolphin
 dunst
 eza
 fd
+feh
 figlet
 firefox
 fzf
@@ -63,6 +65,7 @@ pipewire-jack
 pipewire-pulse
 polkit-kde-agent
 pyenv
+qpwgraph
 qt5-graphicaleffects
 qt5-imageformats
 qt5-quickcontrols
@@ -72,6 +75,7 @@ qt5ct
 qt6-wayland
 ripgrep
 slurp
+steam
 stow
 swappy
 time
