@@ -30,6 +30,7 @@ gst-plugin-pipewire
 gtk-engine-murrine
 gtk-engines
 imagemagick
+inkscape
 intel-ucode
 jq
 kitty
