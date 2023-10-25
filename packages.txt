@@ -55,6 +55,7 @@ ntfs-3g
 nvidia-dkms
 nvidia-settings
 nvidia-utils
+obs-studio
 os-prober
 pacman-contrib
 pamixer
