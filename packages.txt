@@ -25,7 +25,6 @@ git
 gnome-font-viewer
 grim
 grub
-grub-customizer
 gst-plugin-pipewire
 gtk-engine-murrine
 gtk-engines
@@ -108,6 +107,7 @@ virtualbox
 waybar
 wine-staging
 wireplumber
+wlroots
 xdg-desktop-portal-hyprland
 xorg-xhost
 zram-generator
