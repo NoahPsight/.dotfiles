@@ -1,0 +1,6 @@
+# GIMP action-history
+
+(history-item "file-open" 1)
+(history-item "image-resize" 1)
+
+# end of action-history
