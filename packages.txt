@@ -15,6 +15,7 @@ firefox
 fzf
 gimp
 git
+gnome-font-viewer
 grub
 grub-customizer
 gst-plugin-pipewire
@@ -60,6 +61,8 @@ stow
 swappy
 tmux
 tree
+ttf-fira-code
+ttf-nerd-fonts-symbols
 udiskie
 waybar
 wireplumber
