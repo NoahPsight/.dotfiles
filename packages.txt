@@ -1,4 +1,5 @@
 ark
+audacity
 base
 base-devel
 blueman
@@ -25,7 +26,9 @@ jq
 kde-cli-tools
 kitty
 kvantum
+less
 libpulse
+libreoffice-fresh
 linux
 linux-firmware
 linux-headers
@@ -54,6 +57,7 @@ qt5-quickcontrols2
 qt5-wayland
 qt5ct
 qt6-wayland
+reflector
 ripgrep
 slurp
 sof-firmware
@@ -64,6 +68,7 @@ tree
 ttf-fira-code
 ttf-nerd-fonts-symbols
 udiskie
+vlc
 waybar
 wireplumber
 xdg-desktop-portal-hyprland
