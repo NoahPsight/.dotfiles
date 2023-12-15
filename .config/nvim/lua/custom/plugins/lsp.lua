@@ -29,6 +29,7 @@ return {
             formatting.prettier,
             formatting.stylua,
             formatting.black,
+            formatting.phpcsfixer,
           }
           null_ls.setup {
             debug = true,
@@ -53,6 +54,7 @@ return {
             "prettier",
             "stylua",
             "black",
+            "php-cs-fixer",
           },
           automatic_installation = true,
         },
