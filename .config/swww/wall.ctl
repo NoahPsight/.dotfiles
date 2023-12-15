@@ -4,6 +4,6 @@
 0|Rose-Pine|~/.config/swww/Rose-Pine/rosepine.jpg
 0|Tokyo-Night|~/.config/swww/Tokyo-Night/cat_lofi_cafe.jpg
 0|Material-Sakura|~/.config/swww/Material-Sakura/material_pastel_4.jpg
-0|Graphite-Mono|~/.config/swww/Graphite-Mono/nier_2b.jpg
+0|Graphite-Mono|~/.config/swww/Graphite-Mono/japan_lake.jpg
 0|Cyberpunk-Edge|~/.config/swww/Cyberpunk-Edge/david.jpg
 0|Frosted-Glass|~/.config/swww/Frosted-Glass/cloudy_crescent.png
