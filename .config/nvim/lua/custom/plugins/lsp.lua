@@ -18,13 +18,17 @@ return {
         config = function()
           local null_ls = require "null-ls"
           local formatting = null_ls.builtins.formatting
-          local lint = null_ls.builtins.diagnostics
+          local diagnostics = null_ls.builtins.diagnostics
           local sources = {
+            formatting.rustfmt,
+            formatting.clang_format,
+            formatting.shfmt,
+            diagnostics.shellcheck,
+            diagnostics.eslint,
+            diagnostics.flake8,
             formatting.prettier,
             formatting.stylua,
             formatting.black,
-            formatting.rustfmt,
-            lint.shellcheck,
           }
           null_ls.setup {
             debug = true,
@@ -38,10 +42,19 @@ return {
           ensure_installed = {
             "python-lsp-server",
             "lua-language-server",
+            "rust-analyzer",
+            "clangd",
+            "omnisharp",
+            "jdtls",
+            "typescript-language-server",
+            "css-lsp",
+            "html-lsp",
+            "phpactor",
             "prettier",
             "stylua",
             "black",
           },
+          automatic_installation = true,
         },
       },
     },
@@ -62,6 +75,13 @@ return {
       lsp_init("pylsp", {})
       lsp_init("lua_ls", {})
       lsp_init("rust_analyzer", {})
+      lsp_init("clangd", {})
+      lsp_init("omnisharp", {})
+      lsp_init("jdtls", {})
+      lsp_init("tsserver", {})
+      lsp_init("cssls", {})
+      lsp_init("html", {})
+      lsp_init("phpactor", {})
     end,
   },
 }
