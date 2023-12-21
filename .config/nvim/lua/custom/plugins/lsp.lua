@@ -20,16 +20,16 @@ return {
           local formatting = null_ls.builtins.formatting
           local diagnostics = null_ls.builtins.diagnostics
           local sources = {
+            formatting.black,
             formatting.rustfmt,
             formatting.clang_format,
             formatting.shfmt,
+            formatting.stylua,
+            formatting.phpcsfixer,
+            formatting.prettier,
             diagnostics.shellcheck,
             diagnostics.eslint,
             diagnostics.flake8,
-            formatting.prettier,
-            formatting.stylua,
-            formatting.black,
-            formatting.phpcsfixer,
           }
           null_ls.setup {
             debug = true,
