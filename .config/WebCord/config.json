@@ -2,10 +2,10 @@
     "settings": {
         "general": {
             "menuBar": {
-                "hide": false
+                "hide": true
             },
             "tray": {
-                "disable": false
+                "disable": true
             },
             "taskbar": {
                 "flash": true
@@ -18,16 +18,16 @@
         "privacy": {
             "blockApi": {
                 "science": true,
-                "typingIndicator": false,
+                "typingIndicator": true,
                 "fingerprinting": true
             },
             "permissions": {
                 "video": true,
                 "audio": true,
                 "fullscreen": true,
-                "notifications": null,
+                "notifications": true,
                 "display-capture": true,
-                "background-sync": false
+                "background-sync": true
             }
         },
         "advanced": {
@@ -54,19 +54,19 @@
                 "radio": 0
             },
             "devel": {
-                "enabled": false
+                "enabled": true
             },
             "redirection": {
                 "warn": true
             },
             "optimize": {
-                "gpu": false
+                "gpu": true
             },
             "webApi": {
                 "webGl": true
             },
             "unix": {
-                "autoscroll": false
+                "autoscroll": true
             }
         }
     },
