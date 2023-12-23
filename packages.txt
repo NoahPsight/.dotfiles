@@ -6,9 +6,9 @@ blueman
 bluez
 bluez-utils
 brightnessctl
+btop
 cliphist
 cmatrix
-discord
 dmidecode
 dolphin
 dunst
@@ -54,6 +54,7 @@ pipewire-jack
 pipewire-pulse
 polkit-kde-agent
 pyenv
+qpwgraph
 qt5-graphicaleffects
 qt5-imageformats
 qt5-quickcontrols
@@ -77,6 +78,5 @@ unzip
 vlc
 waybar
 wireplumber
-xdg-desktop-portal-hyprland
 zram-generator
 zsh
