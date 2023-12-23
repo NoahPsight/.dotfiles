@@ -1,8 +1,0 @@
-2023/12/23-00:02:19.792 8978 Creating DB /home/fib/.config/WebCord/Local Storage/leveldb since it was missing.
-2023/12/23-00:02:19.819 8978 Reusing MANIFEST /home/fib/.config/WebCord/Local Storage/leveldb/MANIFEST-000001
-2023/12/23-00:04:21.904 897a Level-0 table #5: started
-2023/12/23-00:04:21.908 897a Level-0 table #5: 89052 bytes OK
-2023/12/23-00:04:21.910 897a Delete type=0 #3
-2023/12/23-00:12:21.904 897a Level-0 table #7: started
-2023/12/23-00:12:21.910 897a Level-0 table #7: 60629 bytes OK
-2023/12/23-00:12:21.912 897a Delete type=0 #4
