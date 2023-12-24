@@ -11,6 +11,10 @@ end
 
 return {
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       {
@@ -20,7 +24,9 @@ return {
           local formatting = null_ls.builtins.formatting
           local diagnostics = null_ls.builtins.diagnostics
           local sources = {
-            formatting.black,
+            formatting.black.with {
+              extra_args = { "--line-length", "79" },
+            },
             formatting.rustfmt,
             formatting.clang_format,
             formatting.shfmt,
