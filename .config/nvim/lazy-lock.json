@@ -22,6 +22,7 @@
   "nvim-colorizer.lua": { "branch": "master", "commit": "85855b38011114929f4058efc97af1059ab3e41d" },
   "nvim-dap": { "branch": "master", "commit": "f0dca670fa059eb89dda8869a6310c804241345c" },
   "nvim-dap-python": { "branch": "master", "commit": "091e4ae00a12085f9ed4200a3cd04af7179b8a23" },
+  "nvim-dap-ui": { "branch": "master", "commit": "34160a7ce6072ef332f350ae1d4a6a501daf0159" },
   "nvim-lspconfig": { "branch": "master", "commit": "9099871a7c7e1c16122e00d70208a2cd02078d80" },
   "nvim-tmux-navigation": { "branch": "main", "commit": "d9efffa413a530bdea3783af4fea86be84940283" },
   "nvim-tree.lua": { "branch": "master", "commit": "50f30bcd8c62ac4a83d133d738f268279f2c2ce2" },

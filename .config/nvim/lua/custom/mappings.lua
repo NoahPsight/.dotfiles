@@ -7,6 +7,7 @@ return {
   disabled = {
     n = {
       ["<leader>fm"] = "",
+      ["<leader>gt"] = "",
     },
   },
   my_custom = {
