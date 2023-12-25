@@ -30,22 +30,22 @@ tooltip {
   padding-left: 3px;
   padding-right: 3px;
   color: @main-fg;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button.active {
   background: @wb-act-bg;
   color: @wb-act-fg;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #workspaces button:hover {
   background: @wb-hvr-bg;
   color: @wb-hvr-fg;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #taskbar button {
@@ -58,8 +58,8 @@ tooltip {
   padding-left: 3px;
   padding-right: 3px;
   color: @wb-color;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #taskbar button.active {
@@ -69,8 +69,8 @@ tooltip {
   padding-left: 12px;
   padding-right: 12px;
   margin-right: 3px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #taskbar button:hover {
@@ -78,8 +78,8 @@ tooltip {
   color: @wb-hvr-color;
   padding-left: 3px;
   padding-right: 3px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+  /* animation: gradient_f 20s ease-in infinite; */
+  /* transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682); */
 }
 
 #battery,

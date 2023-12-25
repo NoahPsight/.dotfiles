@@ -61,6 +61,7 @@ return {
             "stylua",
             "black",
             "php-cs-fixer",
+            "debugpy",
           },
           automatic_installation = true,
         },
