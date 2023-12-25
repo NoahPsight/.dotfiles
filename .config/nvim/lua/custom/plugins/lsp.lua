@@ -83,7 +83,9 @@ return {
       lsp_init("pylsp", {})
       lsp_init("lua_ls", {})
       lsp_init("rust_analyzer", {})
-      lsp_init("clangd", {})
+      lsp_init("clangd", {
+        filetypes = { "c", "cpp", "objc", "objcpp", "arduino" },
+      })
       lsp_init("omnisharp", {})
       lsp_init("jdtls", {})
       lsp_init("tsserver", {})
