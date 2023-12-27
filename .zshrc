@@ -22,6 +22,13 @@ alias stow.="pushd ~/.dotfiles/; stow -D .; stow .; popd"
 alias bgrng='~/Scripts/bgrng.sh'
 alias clip="xclip -selection clipboard"
 
+mkdir_and_touch() {
+  mkdir -pv "$(dirname "$1")"
+  touch "$1"
+}
+alias touch="mkdir_and_touch"
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
