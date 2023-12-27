@@ -1,11 +1,9 @@
-local M = {}
-
-M.ui = {
-  theme = "catppuccin",
-  transparency = true,
-}
-M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
 require "custom.sets"
-
-return M
+return {
+  ui = {
+    theme = "catppuccin",
+    transparency = true,
+  },
+  plugins = "custom.plugins",
+  mappings = require "custom.mappings",
+}

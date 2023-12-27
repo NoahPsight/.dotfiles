@@ -10,7 +10,7 @@ return {
       ["<leader>gt"] = "",
     },
   },
-  my_custom = {
+  general = {
     n = {
       ["<C-s>"] = { format_and_save, "LSP Format + Save" },
       ["J"] = { "mzJ`z", "Join lines and restore cursor position" },
