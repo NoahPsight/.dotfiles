@@ -17,6 +17,7 @@ dunst
 eza
 fd
 ffmpegthumbs
+figlet
 firefox
 fzf
 gimp
@@ -37,6 +38,7 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-headers
+luarocks
 neofetch
 neovim
 network-manager-applet

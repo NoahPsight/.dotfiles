@@ -5,7 +5,8 @@
             "file:///home/fib/.config/hypr": "__default__profile__"
         },
         "emptyWindows": {
-            "1702856611066": "__default__profile__"
+            "1702856611066": "__default__profile__",
+            "1703930470564": "__default__profile__"
         }
     },
     "profileAssociationsMigration": true,
@@ -15,16 +16,16 @@
         "folders": [],
         "emptyWindows": [
             {
-                "backupFolder": "1702856611066"
+                "backupFolder": "1703930470564"
             }
         ]
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/fib/.config/Code/Backups/1702856611066",
+            "backupPath": "/home/fib/.config/Code/Backups/1703930470564",
             "uiState": {
                 "mode": 1,
-                "x": 965,
+                "x": 10,
                 "y": 10,
                 "width": 945,
                 "height": 1028
@@ -94,6 +95,17 @@
                                     "id": "openRecentFile",
                                     "uri": {
                                         "$mid": 1,
+                                        "external": "file:///home/fib/.dotfiles/.config/nvim/lua/custom/plugins/oil.lua",
+                                        "path": "/home/fib/.dotfiles/.config/nvim/lua/custom/plugins/oil.lua",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/.dotfiles/.config/nvim/lua/custom/plugins/oil.lua"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/fib/Downloads/theme.css",
                                         "path": "/home/fib/Downloads/theme.css",
                                         "scheme": "file"
@@ -113,7 +125,7 @@
                                 },
                                 {
                                     "id": "workbench.action.clearRecentFiles",
-                                    "label": "&&Clear Recently Opened"
+                                    "label": "&&Clear Recently Opened..."
                                 }
                             ]
                         }
@@ -502,6 +514,10 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.toggleSidebarPosition",
+                                    "label": "&&Move Primary Side Bar Right"
+                                },
+                                {
                                     "id": "submenuitem.ActivityBarPositionMenu",
                                     "label": "Activity Bar Position",
                                     "submenu": {
@@ -517,10 +533,6 @@
                                             }
                                         ]
                                     }
-                                },
-                                {
-                                    "id": "workbench.action.toggleSidebarPosition",
-                                    "label": "&&Move Primary Side Bar Right"
                                 },
                                 {
                                     "id": "submenuitem.PanelPositionMenu",
@@ -584,7 +596,24 @@
                                             },
                                             {
                                                 "id": "workbench.action.hideEditorTabs",
-                                                "label": "Hide"
+                                                "label": "Hidden"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": "submenuitem.EditorActionsPositionSubmenu",
+                                    "label": "Editor Actions Position",
+                                    "submenu": {
+                                        "items": [
+                                            {
+                                                "id": "workbench.action.editorActionsDefault",
+                                                "label": "Tab Bar",
+                                                "checked": true
+                                            },
+                                            {
+                                                "id": "workbench.action.hideEditorActions",
+                                                "label": "Hidden"
                                             }
                                         ]
                                     }
@@ -659,8 +688,12 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
-                                    "id": "workbench.action.splitEditorInGroup",
-                                    "label": "Split in &&Group"
+                                    "id": "workbench.action.moveEditorToNewWindow",
+                                    "label": "&&Move Editor into New Window"
+                                },
+                                {
+                                    "id": "workbench.action.copyEditorToNewWindow",
+                                    "label": "&&Copy Editor into New Window"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -754,7 +787,8 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap"
+                        "label": "&&Word Wrap",
+                        "enabled": false
                     }
                 ]
             },
@@ -1431,11 +1465,6 @@
                 "label": "Ctrl+K Ctrl+\\",
                 "isNative": false,
                 "userSettingsLabel": "ctrl+k ctrl+\\"
-            },
-            "workbench.action.splitEditorInGroup": {
-                "label": "Ctrl+K Ctrl+Shift+\\",
-                "isNative": false,
-                "userSettingsLabel": "ctrl+k ctrl+shift+\\"
             },
             "workbench.action.toggleEditorGroupLayout": {
                 "label": "Shift+Alt+0",

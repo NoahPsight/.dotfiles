@@ -1,4 +1,4 @@
-1|Catppuccin-Mocha|~/.config/swww/Catppuccin-Mocha/evening-sky.png
+1|Catppuccin-Mocha|~/.config/swww/Catppuccin-Mocha/windows-error.jpg
 0|Catppuccin-Latte|~/.config/swww/Catppuccin-Latte/sekiro.jpg
 0|Decay-Green|~/.config/swww/Decay-Green/moments_before_desk.png
 0|Rose-Pine|~/.config/swww/Rose-Pine/rosepine.jpg
