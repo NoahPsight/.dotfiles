@@ -65,9 +65,6 @@
 <item oor:path="/org.openoffice.Office.Recovery/RecoveryInfo"><prop oor:name="Crashed" oor:op="fuse"><value>false</value></prop></item>
 <item oor:path="/org.openoffice.Office.Recovery/RecoveryInfo"><prop oor:name="SessionData" oor:op="fuse"><value>false</value></prop></item>
 <item oor:path="/org.openoffice.Office.Recovery/RecoveryList"><node oor:name="recovery_item_1" oor:op="remove"/></item>
-<item oor:path="/org.openoffice.Office.Recovery/RecoveryList"><node oor:name="recovery_item_3" oor:op="remove"/></item>
-<item oor:path="/org.openoffice.Office.Recovery/RecoveryList"><node oor:name="recovery_item_4" oor:op="remove"/></item>
-<item oor:path="/org.openoffice.Office.Recovery/RecoveryList"><node oor:name="recovery_item_5" oor:op="remove"/></item>
 <item oor:path="/org.openoffice.Office.UI.CalcWindowState/UIElements/States/org.openoffice.Office.UI.WindowState:WindowStateType['private:resource/toolbar/formatobjectbar']"><prop oor:name="ContextActive" oor:op="fuse"><value>true</value></prop></item>
 <item oor:path="/org.openoffice.Office.UI.CalcWindowState/UIElements/States/org.openoffice.Office.UI.WindowState:WindowStateType['private:resource/toolbar/formatobjectbar']"><prop oor:name="ContextSensitive" oor:op="fuse"><value>true</value></prop></item>
 <item oor:path="/org.openoffice.Office.UI.CalcWindowState/UIElements/States/org.openoffice.Office.UI.WindowState:WindowStateType['private:resource/toolbar/formatobjectbar']"><prop oor:name="DockPos" oor:op="fuse"><value>0,2</value></prop></item>
@@ -117,7 +114,7 @@
 <item oor:path="/org.openoffice.Office.Views/Windows"><node oor:name="scalc/10365" oor:op="replace"><prop oor:name="Visible" oor:op="fuse"><value xsi:nil="true"/></prop><node oor:name="UserData"><prop oor:name="Data" oor:op="fuse" oor:type="xs:string"><value>V2,V,128</value></prop></node><prop oor:name="WindowState" oor:op="fuse"><value></value></prop></node></item>
 <item oor:path="/org.openoffice.Office.Views/Windows"><node oor:name="scalc/26100" oor:op="replace"><prop oor:name="Visible" oor:op="fuse"><value xsi:nil="true"/></prop><node oor:name="UserData"><prop oor:name="Data" oor:op="fuse" oor:type="xs:string"><value>V2,V,20</value></prop></node><prop oor:name="WindowState" oor:op="fuse"><value></value></prop></node></item>
 <item oor:path="/org.openoffice.Setup/L10N"><prop oor:name="ooLocale" oor:op="fuse"><value>en-US</value></prop></item>
-<item oor:path="/org.openoffice.Setup/Office/Factories/org.openoffice.Setup:Factory['com.sun.star.sheet.SpreadsheetDocument']"><prop oor:name="ooSetupFactoryWindowAttributes" oor:op="fuse"><value>0,0,946,510;5;0,0,1901,510;</value></prop></item>
+<item oor:path="/org.openoffice.Setup/Office/Factories/org.openoffice.Setup:Factory['com.sun.star.sheet.SpreadsheetDocument']"><prop oor:name="ooSetupFactoryWindowAttributes" oor:op="fuse"><value>0,0,1901,1029;5;0,0,1901,1029;</value></prop></item>
 <item oor:path="/org.openoffice.Setup/Office"><prop oor:name="LastCompatibilityCheckID" oor:op="fuse"><value>60(Build:1)</value></prop></item>
 <item oor:path="/org.openoffice.Setup/Office"><prop oor:name="OfficeRestartInProgress" oor:op="fuse"><value>false</value></prop></item>
 <item oor:path="/org.openoffice.Setup/Office"><prop oor:name="ooSetupInstCompleted" oor:op="fuse"><value>true</value></prop></item>
