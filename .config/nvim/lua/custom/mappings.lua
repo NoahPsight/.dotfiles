@@ -1,6 +1,7 @@
 local function format_and_save()
-  vim.lsp.buf.format { async = true }
+  -- require("conform").format({ bufnr = args.buf })
   vim.cmd "write"
+  print "Formatted and saved."
 end
 
 return {
@@ -22,17 +23,6 @@ return {
     v = {
       ["J"] = { ":m '>+1<CR>gv=gv", "Move visual selection down" },
       ["K"] = { ":m '<-2<CR>gv=gv", "Move visual selection up" },
-    },
-  },
-  crates = {
-    plugin = true,
-    n = {
-      ["<leader>rcu"] = {
-        function()
-          require("crates").upgrade_all_crates()
-        end,
-        "update crates",
-      },
     },
   },
 }
