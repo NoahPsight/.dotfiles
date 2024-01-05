@@ -12,6 +12,8 @@ btop
 cliphist
 cmatrix
 dmidecode
+docker
+docker-compose
 dolphin
 dunst
 eza
