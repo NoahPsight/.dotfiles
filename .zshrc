@@ -69,4 +69,12 @@ if [[ -f .env ]]; then
   set +a
 fi
 
+if [[ "$PWD" != "$HOME" ]]; then
+    if [[ -f ".zshrc" ]]; then
+      source ".zshrc"
+    fi
+fi
+
+
+
 neofetch

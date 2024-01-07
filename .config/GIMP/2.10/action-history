@@ -1,13 +1,20 @@
 # GIMP action-history
 
-(history-item "select-all" 4)
+(history-item "select-all" 1)
+(history-item "edit-paste" 1)
+(history-item "edit-copy" 1)
 (history-item "image-new" 0)
-(history-item "file-quit" 1)
-(history-item "file-open" 1)
+(history-item "file-quit" 2)
+(history-item "edit-clear" 1)
+(history-item "file-open" 0)
+(history-item "tools-unified-transform" 0)
+(history-item "file-export" 1)
 (history-item "image-resize" 0)
-(history-item "edit-clear" 0)
 (history-item "select-none" 0)
 (history-item "file-save-as" 0)
-(history-item "file-export" 1)
+(history-item "layers-delete" 0)
+(history-item "layers-anchor" 0)
+(history-item "tools-color-picker" 0)
+(history-item "tools-warp" 1)
 
 # end of action-history
