@@ -1,9 +1,3 @@
-local function format_and_save()
-  -- require("conform").format({ bufnr = args.buf })
-  vim.cmd "write"
-  print "Formatted and saved."
-end
-
 return {
   disabled = {
     n = {
@@ -13,7 +7,7 @@ return {
   },
   general = {
     n = {
-      ["<C-s>"] = { format_and_save, "LSP Format + Save" },
+      ["<C-s>"] = { "<cmd> w <CR>", "Format and Save file" },
       ["J"] = { "mzJ`z", "Join lines and restore cursor position" },
       ["<C-d>"] = { "<C-d>zz", "Scroll down half a page and recenter" },
       ["<C-u>"] = { "<C-u>zz", "Scroll up half a page and recenter" },
