@@ -1,6 +1,7 @@
 /run/media/fib/ExternalSSD/code --depth 2
 /run/media/fib/ExternalSSD/desktop/csj/invoices
 /home/fib/.config --depth 1
+/home/fib/.config/nvim/lua/custom/
 /home/fib --depth 1
 /tmp
 /home/fib/.dotfiles/scripts
