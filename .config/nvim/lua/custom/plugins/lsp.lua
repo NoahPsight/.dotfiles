@@ -1,6 +1,6 @@
 local servers = {
-  { "pylsp", {} , mason=false},
-  { "lua_ls", {} },
+  { "pylsp", {}},
+  { "lua_ls", {}, mason=true },
   { "rust_analyzer", {} },
   { "clangd", {} },
   { "omnisharp", {} },
@@ -35,7 +35,12 @@ end
 local function grab_server_names()
   local new_table = {}
   for _, server in ipairs(servers) do
-    if server.mason ~= false then
+    local needs_mason = false
+    if server.mason ~= nil then
+      needs_mason = server.mason
+    end
+    if needs_mason == true then
+      print(server[1], needs_mason)
       table.insert(new_table, server[1])
     end
   end
@@ -83,7 +88,7 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup {
         ensure_installed = grab_server_names(),
-        -- automatic_installation = true,
+        automatic_installation = false,
       }
       local configs = require "plugins.configs.lspconfig"
       local function lsp_init(lsp, opt)
