@@ -1,3 +1,26 @@
+local servers = {
+  { "pylsp", {} , mason=false},
+  { "lua_ls", {} },
+  { "rust_analyzer", {} },
+  { "clangd", {} },
+  { "omnisharp", {} },
+  { "jdtls", {} },
+  {
+    "tsserver",
+    {
+      settings = {
+        completions = {
+          completeFunctionCalls = true,
+        },
+      },
+    },
+  },
+  { "cssls", {} },
+  { "html", {} },
+  { "phpactor", {} },
+  { "tailwindcss", {} },
+}
+
 local function table_combine(t1, t2)
   local new_table = {}
   for k, v in pairs(t1) do
@@ -5,6 +28,16 @@ local function table_combine(t1, t2)
   end
   for k, v in pairs(t2) do
     new_table[k] = v
+  end
+  return new_table
+end
+
+local function grab_server_names()
+  local new_table = {}
+  for _, server in ipairs(servers) do
+    if server.mason ~= false then
+      table.insert(new_table, server[1])
+    end
   end
   return new_table
 end
@@ -38,58 +71,35 @@ return {
       vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
   },
+
   {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        opts = {
-          ensure_installed = {
-            "python-lsp-server",
-            "lua-language-server",
-            "clangd",
-            "omnisharp",
-            "jdtls",
-            "typescript-language-server",
-            "css-lsp",
-            "html-lsp",
-            "phpactor",
-            "prettier",
-            "stylua",
-            "black",
-            "php-cs-fixer",
-            "debugpy",
-          },
-          automatic_installation = true,
-        },
-      },
+    "williamboman/mason-lspconfig.nvim",
+    event = "BufReadPre",
+    requires = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
     },
     config = function()
-      local lspconfig = require "lspconfig"
+      require("mason").setup()
+      require("mason-lspconfig").setup {
+        ensure_installed = grab_server_names(),
+        -- automatic_installation = true,
+      }
       local configs = require "plugins.configs.lspconfig"
-      local on_attach = configs.on_attach
-      local capabilities = configs.capabilities
       local function lsp_init(lsp, opt)
         opt = opt or {}
         opt = table_combine(opt, {
-          on_attach = on_attach,
-          capabilities = capabilities,
+          on_attach = configs.on_attach,
+          capabilities = configs.capabilities,
           flags = {
             debounce_text_changes = 150,
           },
         })
-        lspconfig[lsp].setup(opt)
+        require("lspconfig")[lsp].setup(opt)
       end
-      lsp_init("pylsp", {})
-      lsp_init("lua_ls", {})
-      lsp_init("rust_analyzer", {})
-      lsp_init("clangd", {})
-      lsp_init("omnisharp", {})
-      lsp_init("jdtls", {})
-      lsp_init("tsserver", {})
-      lsp_init("cssls", {})
-      lsp_init("html", {})
-      lsp_init("phpactor", {})
+      for _, server in ipairs(servers) do
+        lsp_init(server[1], server[2])
+      end
     end,
   },
 }
