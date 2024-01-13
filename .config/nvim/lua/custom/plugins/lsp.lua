@@ -1,6 +1,6 @@
 local servers = {
-  { "pylsp", {}},
-  { "lua_ls", {}, mason=true },
+  { "pylsp", {} },
+  { "lua_ls", {}, mason = true },
   { "rust_analyzer", {} },
   { "clangd", {} },
   { "omnisharp", {} },
@@ -40,7 +40,6 @@ local function grab_server_names()
       needs_mason = server.mason
     end
     if needs_mason == true then
-      print(server[1], needs_mason)
       table.insert(new_table, server[1])
     end
   end
