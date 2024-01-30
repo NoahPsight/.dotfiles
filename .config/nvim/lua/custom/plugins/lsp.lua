@@ -1,5 +1,6 @@
 local servers = {
-  { "pylsp", {} },
+  { "pyright", {} },
+  -- { "pylsp", {} },
   { "lua_ls", {}, mason = true },
   { "rust_analyzer", {} },
   { "clangd", {} },
@@ -54,6 +55,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-context",
     lazy = false,
+    opts = {
+      multiline_threshold = 1,
+      mode = "topline",
+    },
   },
   {
     "stevearc/conform.nvim",
@@ -62,12 +67,13 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black" },
+        python = { "isort", "black" },
         javascript = { "prettier" },
+        json = { "prettier" },
         rust = { "rustfmt" },
       },
       format_on_save = {
-        timeout_ms = 500,
+        timeout_ms = 2000,
         lsp_fallback = true,
       },
     },

@@ -35,6 +35,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+
 export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -61,20 +62,24 @@ zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zicompinit; zicdreplay
 
-eval "$(starship init zsh)"
 
-set -a
 if [[ -f .env ]]; then
+  set -a
   source ./.env
   set +a
 fi
 
-if [[ "$PWD" != "$HOME" ]]; then
-    if [[ -f ".zshrc" ]]; then
-      source ".zshrc"
-    fi
-fi
+# if [[ "$PWD" != "$HOME" ]]; then
+#     if [[ -f ".zshrc" ]]; then
+#       source ".zshrc"
+#     fi
+# fi
 
+eval "$(starship init zsh)"
 
+# source /usr/share/nvm/init-nvm.sh
 
-neofetch
+# bun
+# [ -s "/home/fib/.bun/_bun" ] && source "/home/fib/.bun/_bun"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"

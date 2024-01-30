@@ -13,6 +13,7 @@ return {
       ["<C-u>"] = { "<C-u>zz", "Scroll up half a page and recenter" },
       ["n"] = { "nzzzv", "Find next and recenter" },
       ["N"] = { "Nzzzv", "Find previous and recenter" },
+      ["*"] = { "*zz", "Search word under cursor and recenter" },
     },
     v = {
       ["J"] = { ":m '>+1<CR>gv=gv", "Move visual selection down" },

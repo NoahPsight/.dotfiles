@@ -1,11 +1,11 @@
 # GIMP action-history
 
-(history-item "select-all" 1)
+(history-item "select-all" 2)
 (history-item "edit-paste" 1)
-(history-item "edit-copy" 1)
+(history-item "edit-copy" 0)
 (history-item "image-new" 0)
 (history-item "file-quit" 2)
-(history-item "edit-clear" 1)
+(history-item "edit-clear" 2)
 (history-item "file-open" 0)
 (history-item "tools-unified-transform" 0)
 (history-item "file-export" 1)

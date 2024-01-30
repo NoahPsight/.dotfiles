@@ -11,6 +11,7 @@ brightnessctl
 btop
 cliphist
 cmatrix
+code
 dmidecode
 docker
 docker-compose
@@ -71,12 +72,14 @@ qt5ct
 qt6-wayland
 reflector
 ripgrep
+rsync
 shellcheck
 slurp
 smartmontools
 sof-firmware
 stow
 swappy
+time
 tmux
 tree
 ttf-fira-code
@@ -84,8 +87,10 @@ ttf-nerd-fonts-symbols
 udiskie
 unzip
 usbutils
+virtualbox
 vlc
 waybar
 wireplumber
+yarn
 zram-generator
 zsh
