@@ -15,4 +15,12 @@ return {
       },
     },
   },
+  init = function()
+    local map = require "custom.mappings"
+    map.cloak = {
+      n = {
+        ["<leader>ct"] = { "<cmd> CloakToggle <CR>", "Cloak Toggle" },
+      },
+    }
+  end,
 }

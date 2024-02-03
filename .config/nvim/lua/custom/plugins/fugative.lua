@@ -14,6 +14,7 @@ return {
         ["<leader>gf"] = { "<cmd> Git fetch <CR>", "Git Fetch" },
         ["<leader>gp"] = { "<cmd> Git pull <CR>", "Git Pull" },
         ["<leader>gP"] = { "<cmd> Git push <CR>", "Git Push" },
+        ["<leader>gr"] = { "<cmd> Git rebase -i --root <CR>", "Git Rebase" },
         ["<leader>gc"] = {
           "<cmd> Telescope git_branches <CR>",
           "Git Checkout",

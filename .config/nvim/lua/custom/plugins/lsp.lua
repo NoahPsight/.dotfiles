@@ -70,15 +70,20 @@ return {
         python = { "isort", "black" },
         javascript = { "prettier" },
         json = { "prettier" },
+        html = { "prettier" },
         rust = { "rustfmt" },
-      },
-      format_on_save = {
-        timeout_ms = 2000,
-        lsp_fallback = true,
       },
     },
     init = function()
-      vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+      local map = require("custom.mappings")
+      map.conform = {
+        n = {
+          ["<leader>fm"] = {
+            require("conform").format,
+            "Format",
+          },
+        },
+      }
     end,
   },
 

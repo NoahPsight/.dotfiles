@@ -75,7 +75,7 @@ main_execution() {
         current_tmux_session="${current_tmux_session//\"/}"
         fzf_through=$(printf '%s\n' "$fzf_through" | grep -v "^$current_tmux_session$")
     fi
-    
+
     local idx=$(printf '%s\n' "$fzf_through" | fzf +m)
     if [[ -n "$idx" ]]; then
         echo -e "$idx\n$(cat $PROJECTS_HISTORY_FILE)" > "$PROJECTS_HISTORY_FILE"
@@ -83,17 +83,20 @@ main_execution() {
         local idx=$(array_search "$idx" "${display_projects[@]}")
         local dir="${projects[$idx]}"
         local tmux_session_name=\"$(dir_to_str "$dir")\"
-        
         if ! tmux list-sessions | grep -q "^$tmux_session_name:"; then
             pushd "$dir" > /dev/null
-            tmux new-session -d -s "$tmux_session_name"
+            tmux new-session -d -s "$tmux_session_name" 
+            tmux send-keys -t "${tmux_session_name}" 'clear; v .' C-m
+            tmux split-window -h -t "$tmux_session_name" 
+            tmux select-pane -t "${tmux_session_name}" -L
+            tmux attach-session -t "$tmux_session_name" 
             popd > /dev/null
-        fi
-        
-        if [[ -n "$TMUX" ]]; then
-          tmux switch-client -n -t "$tmux_session_name" 
         else
-          tmux attach-session -t "$tmux_session_name"
+            if [[ -n "$TMUX" ]]; then
+                tmux switch-client -n -t "$tmux_session_name"
+            else
+                tmux attach-session -t "$tmux_session_name"
+            fi
         fi
     fi
 }

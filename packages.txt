@@ -24,8 +24,10 @@ ffmpegthumbs
 figlet
 firefox
 fzf
+geckodriver
 gimp
 git
+git-filter-repo
 gnome-font-viewer
 grub
 grub-customizer

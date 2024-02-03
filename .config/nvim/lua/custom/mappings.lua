@@ -1,13 +1,13 @@
 return {
   disabled = {
     n = {
-      ["<leader>fm"] = "",
+      -- ["<leader>fm"] = "",
       ["<leader>gt"] = "",
     },
   },
   general = {
     n = {
-      ["<C-s>"] = { "<cmd> w <CR>", "Format and Save file" },
+      -- ["<C-s>"] = { "<cmd> w <CR>", "Format and Save file" },
       ["J"] = { "mzJ`z", "Join lines and restore cursor position" },
       ["<C-d>"] = { "<C-d>zz", "Scroll down half a page and recenter" },
       ["<C-u>"] = { "<C-u>zz", "Scroll up half a page and recenter" },

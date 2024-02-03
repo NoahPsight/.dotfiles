@@ -13,6 +13,9 @@
 [safe]
     directory = *
 
+[push]
+    autoSetupRemote = true
+
 [alias]
   to-ssh = "!sh -c ' \
       git remote set-url origin $(git remote get-url origin | \

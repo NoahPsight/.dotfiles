@@ -75,11 +75,12 @@ fi
 #     fi
 # fi
 
-eval "$(starship init zsh)"
-
 # source /usr/share/nvm/init-nvm.sh
 
 # bun
 # [ -s "/home/fib/.bun/_bun" ] && source "/home/fib/.bun/_bun"
 # export BUN_INSTALL="$HOME/.bun"
 # export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+eval "$(starship init zsh)"
