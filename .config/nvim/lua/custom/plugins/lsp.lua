@@ -75,12 +75,16 @@ return {
       },
     },
     init = function()
-      local map = require("custom.mappings")
+      local map = require "custom.mappings"
       map.conform = {
         n = {
           ["<leader>fm"] = {
-            require("conform").format,
-            "Format",
+            function()
+              require("conform").format()
+              vim.cmd "w"
+              print "Formatted and Saved"
+            end,
+            "Format and Save File",
           },
         },
       }
