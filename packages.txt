@@ -53,6 +53,7 @@ npm
 ntfs-3g
 nvidia-dkms
 nvidia-utils
+nwg-look
 os-prober
 pacman-contrib
 pamixer
@@ -94,5 +95,6 @@ vlc
 waybar
 wireplumber
 yarn
+zoxide
 zram-generator
 zsh

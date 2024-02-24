@@ -16,17 +16,20 @@
 [push]
     autoSetupRemote = true
 
+[rerere]
+    enabled = true
+
 [alias]
   to-ssh = "!sh -c ' \
-      git remote set-url origin $(git remote get-url origin | \
-      sed \"s|https://github.com/|git@github.com:|\"); \
-      git remote get-url origin \
-  '"
+    git remote set-url origin $(git remote get-url origin | \
+    sed \"s|https://github.com/|git@github.com:|\"); \
+    git remote get-url origin \
+    '"
   to-https = "!sh -c ' \
-      git remote set-url origin $(git remote get-url origin | \
-      sed \"s|git@github.com:|https://github.com/|\"); \
-      git remote get-url origin \
-  '"
+    git remote set-url origin $(git remote get-url origin | \
+    sed \"s|git@github.com:|https://github.com/|\"); \
+    git remote get-url origin \
+    '"
   nuke = "!f() { \
     confirmed=false; \
     for arg in \"$@\"; do \
@@ -46,4 +49,4 @@
       git reset --hard origin/$(git branch --show-current) && \
       git clean -df; \
     fi \
-  }; f"
+    }; f"

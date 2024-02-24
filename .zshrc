@@ -10,8 +10,8 @@ alias  l='eza -l  --icons'
 alias ls='eza -1  --icons'
 alias ll='eza -la --icons'
 alias ld='eza -lD --icons'
-
-alias samwise='figlet Samwise | lolcat'
+eval "$(zoxide init zsh)"
+alias cd="z"
 alias v="/bin/nvim"
 alias vi="/bin/nvim"
 alias vim="/bin/nvim"
@@ -58,7 +58,7 @@ zinit light zdharma-continuum/zinit-annex-as-monitor
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
 zinit light zdharma-continuum/zinit-annex-patch-dl
 zinit light zdharma-continuum/zinit-annex-rust
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zicompinit; zicdreplay
 
@@ -68,12 +68,6 @@ if [[ -f .env ]]; then
   source ./.env
   set +a
 fi
-
-# if [[ "$PWD" != "$HOME" ]]; then
-#     if [[ -f ".zshrc" ]]; then
-#       source ".zshrc"
-#     fi
-# fi
 
 # source /usr/share/nvm/init-nvm.sh
 
