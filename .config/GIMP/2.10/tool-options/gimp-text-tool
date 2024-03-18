@@ -1,7 +1,8 @@
 # GIMP gimp-text-tool options
 
-(foreground (color-rgb 1 1 1))
+(foreground (color-rgb 0 0.74999999999999956 1))
 (palette "Color History")
 (font "Sans-serif")
+(font-size 40)
 
 # end of gimp-text-tool options

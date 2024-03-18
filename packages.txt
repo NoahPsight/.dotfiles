@@ -24,6 +24,7 @@ ffmpegthumbs
 figlet
 firefox
 fzf
+gammastep
 geckodriver
 gimp
 git

@@ -10,12 +10,15 @@ alias  l='eza -l  --icons'
 alias ls='eza -1  --icons'
 alias ll='eza -la --icons'
 alias ld='eza -lD --icons'
+alias cat='bat'
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias v="/bin/nvim"
 alias vi="/bin/nvim"
 alias vim="/bin/nvim"
 alias emacs="/bin/nvim"
+alias nightlight="pkill gammastep; gammastep -O 3000 & disown"
+alias nightlight_off="pkill gammastep;"
 
 alias stow.="pushd ~/.dotfiles/; stow -D .; stow .; popd"
 
